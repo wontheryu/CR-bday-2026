@@ -16,6 +16,13 @@
       <img id="loadGif" class="splash__img" alt="Loading" />
     </div>
   </div>
+  <!-- After-load characters (place files in docs/lab/assets/) -->
+  <div id="afterLoad" class="afterload" aria-label="캐릭터">
+    <div class="afterload__row" role="group" aria-label="캐릭터 2명">
+      <img class="afterload__img" src="./assets/char-1.png" alt="Character 1" width="204" height="204" decoding="async" />
+      <img class="afterload__img" src="./assets/char-2.png" alt="Character 2" width="204" height="204" decoding="async" />
+    </div>
+  </div>
   <script>
     (function () {
       const splash = document.getElementById('splash');
@@ -37,6 +44,8 @@
 
       function closeSplash() {
         splash.remove();
+        const after = document.getElementById('afterLoad');
+        if (after) after.classList.add('is-visible');
       }
 
       // Auto-close after 3.5s (manual button removed)
