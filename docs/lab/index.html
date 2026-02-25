@@ -65,104 +65,6 @@
       <button id="splashClose" class="splash__btn" type="button">ENTER</button>
     </div>
   </div>
-  <a class="skip" href="#main">본문 바로가기</a>
-
-  <header class="topbar" role="banner">
-    <div class="topbar__inner">
-      <div class="brand">
-        <span class="brand__tag">LAB</span>
-        <span class="brand__title">CR-bday-2026</span>
-      </div>
-
-      <nav class="nav" aria-label="주요 메뉴">
-        <a href="#panels">패널</a>
-        <a href="#checks">체크</a>
-        <a href="#debug">디버그</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="page" role="main">
-    <section class="stage" aria-labelledby="lab-title">
-      <div class="hero">
-        <h1 id="lab-title" class="hero__title">반응형 UI 프레임 실험실</h1>
-        <p class="hero__desc">
-          목표: <strong>배경 타일(반복)</strong> + <strong>CSS UI 프레임</strong>이 어떤 기기 폭에서도 <strong>빈칸 없이</strong> 자연스럽게 보이는지 확인.
-        </p>
-        <ul class="hero__meta">
-          <li>배경 타일 파일명: <code>bg_tile.jpeg</code></li>
-          <li>테스트 폭: 360 / 390 / 768 / 1024+ (창 크기 조절로 확인)</li>
-          <li>이 페이지는 <code>/docs/lab/</code>에서만 실험</li>
-        </ul>
-      </div>
-
-      <section id="panels" class="section" aria-label="패널 레이아웃 테스트">
-        <h2 class="section__title">패널 레이아웃</h2>
-        <p class="section__desc">모바일에서는 1열, 태블릿/PC에서는 2~3열로 재배치되는지 확인.</p>
-
-        <div class="grid">
-          <article class="panel">
-            <h3 class="panel__title">공지</h3>
-            <p class="panel__body">공지 문장이 길어져도 버튼/레이아웃이 깨지지 않는지 확인.</p>
-            <button class="btn" type="button">공지 더보기</button>
-          </article>
-
-          <article class="panel">
-            <h3 class="panel__title">일정</h3>
-            <p class="panel__body">타임테이블/운영시간 등 2~3줄 정도를 넣어도 안전한지 확인.</p>
-            <button class="btn" type="button">일정 보기</button>
-          </article>
-
-          <article class="panel">
-            <h3 class="panel__title">굿즈</h3>
-            <p class="panel__body">굿즈 이름이 길어져도 줄바꿈이 자연스러운지 확인.</p>
-            <button class="btn" type="button">굿즈 안내</button>
-          </article>
-
-          <article class="panel">
-            <h3 class="panel__title">럭키드로우</h3>
-            <p class="panel__body">참여 방법/주의사항 텍스트가 많아도 패널이 안정적인지 확인.</p>
-            <button class="btn" type="button">참여 방법</button>
-          </article>
-
-          <article class="panel">
-            <h3 class="panel__title">오시는 길</h3>
-            <p class="panel__body">지도 버튼이 눌리기 쉬운 크기(터치 영역)인지 확인.</p>
-            <button class="btn" type="button">지도 열기</button>
-          </article>
-
-          <article class="panel">
-            <h3 class="panel__title">FAQ</h3>
-            <p class="panel__body">Q/A 목록을 넣을 때 스크롤과 간격이 자연스러운지 확인.</p>
-            <button class="btn" type="button">FAQ 보기</button>
-          </article>
-        </div>
-      </section>
-
-      <section id="checks" class="section" aria-label="체크리스트">
-        <h2 class="section__title">체크리스트</h2>
-        <div class="checklist">
-          <label class="check"><input type="checkbox" /> 배경이 화면 전체(세로/가로)에서 끊김 없이 채워진다</label>
-          <label class="check"><input type="checkbox" /> 중앙 프레임이 좌우로 넘치지 않는다(특히 360~390)</label>
-          <label class="check"><input type="checkbox" /> 768 이상에서 2열, 1024 이상에서 3열로 자연스럽게 전환된다</label>
-          <label class="check"><input type="checkbox" /> 버튼이 충분히 크고(터치) 텍스트가 길어져도 깨지지 않는다</label>
-        </div>
-      </section>
-
-      <section id="debug" class="section" aria-label="디버그 정보">
-        <h2 class="section__title">디버그</h2>
-        <p class="section__desc">현재 화면 폭을 보기 위한 자리(추후 JS로 표시 가능). 지금은 창 크기 조절로 확인.</p>
-        <div class="panel panel--muted">
-          <p class="panel__body"><strong>Tip</strong> : 모바일에서는 주소창/툴바로 높이가 바뀌니, 배경이 끝까지 깔리는지 스크롤/회전으로 꼭 확인.</p>
-        </div>
-      </section>
-
-      <footer class="stage__footer" role="contentinfo">
-        <small>© 2026 CR-bday-2026 · LAB</small>
-      </footer>
-    </section>
-  </main>
-</body>
   <script>
     (function () {
       const splash = document.getElementById('splash');
@@ -181,4 +83,5 @@
       }, 2500);
     })();
   </script>
+</body>
 </html>
