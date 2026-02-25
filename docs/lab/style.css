@@ -24,7 +24,7 @@ body {
   background-color: var(--bg-fallback);
 
   /* Repeating tile background */
-  background-image: url("./assets/bg_tile.jpeg");
+  background-image: url("./assets/bg_tile_dark.jpeg");
   background-repeat: repeat;
   background-position: top left;
 
