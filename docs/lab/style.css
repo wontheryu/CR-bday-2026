@@ -1,0 +1,47 @@
+
+
+/* LAB: background-only test
+   Tile file: ./assets/bg_tile.jpeg (128x128 recommended)
+*/
+
+:root {
+  /* Fallback color shown while the image loads or if it fails */
+  --bg-fallback: #0b1020;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100svh; /* better on mobile (accounts for dynamic browser UI) */
+  min-height: 100vh;  /* fallback */
+  margin: 0;
+
+  /* Fallback background */
+  background-color: var(--bg-fallback);
+
+  /* Repeating tile background */
+  background-image: url("./assets/bg_tile.jpeg");
+  background-repeat: repeat;
+  background-position: top left;
+
+  /* Important: keep native tile size (no scaling) */
+  background-size: auto;
+
+  /* If the tile has crisp edges, try to keep it crisp when scaled by the browser */
+  image-rendering: pixelated;
+}
+
+/* Optional: if you later use <img> for pixel assets, keep them crisp too */
+img.pixel {
+  image-rendering: pixelated;
+}
+
+/* Basic text defaults only (keeps the demo readable) */
+body {
+  color: #e8f0ff;
+  font-family: system-ui, -apple-system, sans-serif;
+}
