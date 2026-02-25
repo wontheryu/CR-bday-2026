@@ -62,7 +62,7 @@ img.pixel {
   z-index: 10000;
 }
 
-/* Splash overlay (first screen intro image) */
+/* Splash overlay (first screen load image: ./assets/load.gif) */
 .splash {
   position: fixed;
   inset: 0;
@@ -72,6 +72,7 @@ img.pixel {
   padding: 16px;
   background: rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(6px);
+  animation: splashFadeIn 0.18s ease-out;
 }
 
 .splash__inner {
@@ -113,4 +114,14 @@ img.pixel {
   .splash__inner {
     width: min(420px, 34vw);
   }
+}
+
+@keyframes splashFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Improve mobile tap feel */
+.splash__btn, .splash__img {
+  -webkit-tap-highlight-color: transparent;
 }
