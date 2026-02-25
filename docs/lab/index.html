@@ -8,8 +8,63 @@
 
   <!-- CSS (배경 타일은 style.css에서 적용: bg_tile.jpeg) -->
   <link rel="stylesheet" href="./style.css" />
+  <style>
+    /* LAB splash image (centered, responsive) */
+    .splash {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(6px);
+    }
+
+    .splash__inner {
+      width: min(360px, 86vw);
+      max-width: 520px;
+      display: grid;
+      gap: 10px;
+      place-items: center;
+    }
+
+    .splash__img {
+      width: 100%;
+      height: auto;
+      display: block;
+      image-rendering: pixelated;
+    }
+
+    .splash__btn {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.10);
+      color: #e8f0ff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .splash__btn:active {
+      transform: translateY(1px);
+    }
+
+    .splash.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.28s ease;
+    }
+  </style>
 </head>
 <body>
+  <!-- First screen splash (put your image in docs/lab/assets/intro.gif or change the src) -->
+  <div id="splash" class="splash" aria-label="인트로 화면">
+    <div class="splash__inner">
+      <img class="splash__img" src="./assets/intro.gif" alt="Intro" />
+      <button id="splashClose" class="splash__btn" type="button">ENTER</button>
+    </div>
+  </div>
   <a class="skip" href="#main">본문 바로가기</a>
 
   <header class="topbar" role="banner">
@@ -108,4 +163,22 @@
     </section>
   </main>
 </body>
+  <script>
+    (function () {
+      const splash = document.getElementById('splash');
+      const btn = document.getElementById('splashClose');
+      if (!splash) return;
+
+      function closeSplash() {
+        splash.classList.add('is-hidden');
+        setTimeout(() => splash.remove(), 320);
+      }
+
+      if (btn) btn.addEventListener('click', closeSplash);
+      // Optional: auto-close after 2.5s (comment out if you want manual only)
+      setTimeout(() => {
+        if (document.body.contains(splash)) closeSplash();
+      }, 2500);
+    })();
+  </script>
 </html>

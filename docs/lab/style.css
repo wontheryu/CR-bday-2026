@@ -1,12 +1,11 @@
-
-
-/* LAB: background-only test
-   Tile file: ./assets/bg_tile.jpeg (128x128 recommended)
+/* LAB: tiled background + splash overlay test
+   Tile file: ./assets/bg_tile_dark.jpeg (128x128 recommended)
 */
 
 :root {
   /* Fallback color shown while the image loads or if it fails */
   --bg-fallback: #0b1020;
+  --fg: #e8f0ff;
 }
 
 * { box-sizing: border-box; }
@@ -16,9 +15,15 @@ html {
 }
 
 body {
-  min-height: 100svh; /* better on mobile (accounts for dynamic browser UI) */
-  min-height: 100vh;  /* fallback */
+  /* Viewport height handling (mobile browser UI friendly) */
+  min-height: 100dvh;
+  min-height: 100svh;
+  min-height: 100vh;
+
   margin: 0;
+
+  color: var(--fg);
+  font-family: system-ui, -apple-system, sans-serif;
 
   /* Fallback background */
   background-color: var(--bg-fallback);
@@ -40,8 +45,72 @@ img.pixel {
   image-rendering: pixelated;
 }
 
-/* Basic text defaults only (keeps the demo readable) */
-body {
-  color: #e8f0ff;
-  font-family: system-ui, -apple-system, sans-serif;
+/* Skip link (accessibility) */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  padding: 8px 10px;
+  border: 2px solid rgba(255,255,255,0.28);
+  background: rgba(0,0,0,0.55);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.skip:focus {
+  left: 8px;
+  z-index: 10000;
+}
+
+/* Splash overlay (first screen intro image) */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(6px);
+}
+
+.splash__inner {
+  width: min(360px, 86vw);
+  max-width: 520px;
+  display: grid;
+  gap: 10px;
+  place-items: center;
+}
+
+.splash__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.splash__btn {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.10);
+  color: var(--fg);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.splash__btn:active {
+  transform: translateY(1px);
+}
+
+.splash.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+
+@media (min-width: 768px) {
+  .splash__inner {
+    width: min(420px, 34vw);
+  }
 }
