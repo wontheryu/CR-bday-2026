@@ -62,7 +62,9 @@ img.pixel {
   z-index: 10000;
 }
 
-/* Splash overlay (first screen load image: ./assets/load.gif) */
+/* Splash overlay (first screen load image: ./assets/load.gif)
+   Requirement: no blur / no dark overlay; just centered loading.
+*/
 .splash {
   position: fixed;
   inset: 0;
@@ -70,9 +72,7 @@ img.pixel {
   display: grid;
   place-items: center;
   padding: 16px;
-  background: rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(6px);
-  animation: splashFadeIn 0.18s ease-out;
+  background: transparent;
 }
 
 .splash__inner {
@@ -88,20 +88,7 @@ img.pixel {
   height: auto;
   display: block;
   image-rendering: pixelated;
-}
-
-.splash__btn {
-  width: 100%;
-  padding: 10px 12px;
-  border: 2px solid rgba(255,255,255,0.28);
-  background: rgba(255,255,255,0.10);
-  color: var(--fg);
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.splash__btn:active {
-  transform: translateY(1px);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .splash.is-hidden {
@@ -114,14 +101,4 @@ img.pixel {
   .splash__inner {
     width: min(420px, 34vw);
   }
-}
-
-@keyframes splashFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Improve mobile tap feel */
-.splash__btn, .splash__img {
-  -webkit-tap-highlight-color: transparent;
 }
