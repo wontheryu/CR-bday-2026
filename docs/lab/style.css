@@ -1,85 +1,59 @@
-/* LAB: tiled background + splash overlay test
-   Tile file: ./assets/bg_tile_dark.jpeg (128x128 recommended)
+/*
+  CR-bday-2026 / LAB
+  - Background: repeating tile
+  - First screen: centered load.gif
 */
 
 :root {
-  /* Fallback color shown while the image loads or if it fails */
   --bg-fallback: #0b1020;
   --fg: #e8f0ff;
+
+  --tile-url: url("./assets/bg_tile_dark.jpeg");
+  --tile-size: 128px; /* match your tile export size */
 }
 
 * { box-sizing: border-box; }
 
-html {
+html, body {
   height: 100%;
 }
 
 body {
-  /* Viewport height handling (mobile browser UI friendly) */
-  min-height: 100dvh;
-  min-height: 100svh;
-  min-height: 100vh;
-
   margin: 0;
-
   color: var(--fg);
   font-family: system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
 
-  /* Fallback background */
   background-color: var(--bg-fallback);
-
-  /* Repeating tile background */
-  background-image: url("./assets/bg_tile_dark.jpeg");
+  background-image: var(--tile-url);
   background-repeat: repeat;
   background-position: top left;
-
-  /* Important: keep native tile size (no scaling) */
-  background-size: auto;
-
-  /* If the tile has crisp edges, try to keep it crisp when scaled by the browser */
-  image-rendering: pixelated;
+  background-size: var(--tile-size) var(--tile-size);
 }
 
-/* Optional: if you later use <img> for pixel assets, keep them crisp too */
-img.pixel {
-  image-rendering: pixelated;
-}
+/* Prefer modern viewport units when available (mobile browser UI friendly) */
+body { min-height: 100vh; }
+@supports (min-height: 100svh) { body { min-height: 100svh; } }
+@supports (min-height: 100dvh) { body { min-height: 100dvh; } }
 
-/* Skip link (accessibility) */
-.skip {
-  position: absolute;
-  left: -9999px;
-  top: 8px;
-  padding: 8px 10px;
-  border: 2px solid rgba(255,255,255,0.28);
-  background: rgba(0,0,0,0.55);
-  color: var(--fg);
-  text-decoration: none;
-}
-
-.skip:focus {
-  left: 8px;
-  z-index: 10000;
-}
-
-/* Splash overlay (first screen load image: ./assets/load.gif)
-   Requirement: no blur / no dark overlay; just centered loading.
-*/
+/* Splash (load screen) */
 .splash {
   position: fixed;
   inset: 0;
   z-index: 9999;
+
   display: grid;
   place-items: center;
+
   padding: 16px;
-  background: transparent;
+  background: transparent; /* no blur / no overlay */
 }
 
 .splash__inner {
   width: min(360px, 86vw);
   max-width: 520px;
+
   display: grid;
-  gap: 10px;
   place-items: center;
 }
 
@@ -87,14 +61,9 @@ img.pixel {
   width: 100%;
   height: auto;
   display: block;
+
   image-rendering: pixelated;
   -webkit-tap-highlight-color: transparent;
-}
-
-.splash.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.28s ease;
 }
 
 @media (min-width: 768px) {

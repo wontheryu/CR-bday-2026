@@ -22,8 +22,7 @@
       if (!splash) return;
 
       function closeSplash() {
-        splash.classList.add('is-hidden');
-        setTimeout(() => splash.remove(), 320);
+        splash.remove()
       }
 
       // Auto-close after 3.5s (manual button removed)
