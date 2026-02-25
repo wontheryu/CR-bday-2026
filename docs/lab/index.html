@@ -13,7 +13,7 @@
   <!-- First screen splash (put your image in docs/lab/assets/load.gif or change the src) -->
   <div id="splash" class="splash" aria-label="인트로 화면">
     <div class="splash__inner">
-      <img class="splash__img" src="./assets/load.gif" alt="Loading" />
+      <img id="loadGif" class="splash__img" alt="Loading" />
     </div>
   </div>
   <script>
@@ -21,8 +21,22 @@
       const splash = document.getElementById('splash');
       if (!splash) return;
 
+      // Force GIF to restart from frame 1 on every load/refresh (cache-bust)
+      function setLoadGifSrc() {
+        const loadGif = document.getElementById('loadGif');
+        if (loadGif) {
+          loadGif.src = `./assets/load.gif?cb=${Date.now()}`;
+        }
+      }
+
+      // Initial set
+      setLoadGifSrc();
+
+      // Also handle Safari bfcache (back/forward cache)
+      window.addEventListener('pageshow', setLoadGifSrc);
+
       function closeSplash() {
-        splash.remove()
+        splash.remove();
       }
 
       // Auto-close after 3.5s (manual button removed)
