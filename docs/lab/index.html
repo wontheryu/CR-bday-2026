@@ -7,22 +7,24 @@
   <meta name="description" content="CR-bday-2026 반응형(모바일/태블릿/PC) 레이아웃 실험실" />
 
   <!-- CSS (배경 타일은 style.css에서 적용: bg_tile.jpeg) -->
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./style.css?v=20260226_1" />
 </head>
 <body>
-  <!-- First screen splash (put your image in docs/lab/assets/load.gif or change the src) -->
+  <!-- First screen splash -->
   <div id="splash" class="splash" aria-label="인트로 화면">
     <div class="splash__inner">
       <img id="loadGif" class="splash__img" src="./assets/load.gif" alt="Loading" width="320" height="180" decoding="async" />
     </div>
   </div>
-  <!-- After-load characters (place files in docs/lab/assets/) -->
+
+  <!-- After-load characters -->
   <div id="afterLoad" class="afterload is-visible" aria-label="캐릭터">
     <div class="afterload__row" role="group" aria-label="캐릭터 2명">
       <img class="afterload__img" src="./assets/char-1.png" alt="Character 1" width="204" height="204" decoding="async" />
       <img class="afterload__img" src="./assets/char-2.png" alt="Character 2" width="204" height="204" decoding="async" />
     </div>
   </div>
-  <script src="./app.js" defer></script>
+
+  <script src="./app.js?v=20260226_1" defer></script>
 </body>
 </html>
