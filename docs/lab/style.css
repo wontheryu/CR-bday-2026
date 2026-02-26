@@ -1,22 +1,20 @@
-/*
-  CR-bday-2026 / LAB
-  - Background: repeating tile
-  - First screen: centered load.gif
-*/
+/* docs/lab/style.css */
 
 :root {
   --bg-fallback: #0b1020;
   --fg: #e8f0ff;
 
+  /* background tile */
   --tile-url: url("./assets/bg_tile_dark.jpeg");
-  --tile-size: 128px; /* match your tile export size */
+  --tile-size: 128px;
+
+  /* character size by device */
+  --char-size: 204px; /* desktop */
 }
 
 * { box-sizing: border-box; }
 
-html, body {
-  height: 100%;
-}
+html, body { height: 100%; }
 
 body {
   margin: 0;
@@ -36,7 +34,7 @@ body { min-height: 100vh; }
 @supports (min-height: 100svh) { body { min-height: 100svh; } }
 @supports (min-height: 100dvh) { body { min-height: 100dvh; } }
 
-/* Splash (load screen) */
+/* Splash (loading screen) */
 .splash {
   position: fixed;
   inset: 0;
@@ -46,7 +44,10 @@ body { min-height: 100vh; }
   place-items: center;
 
   padding: 16px;
-  background: rgba(0, 0, 0, 0.85); /* dim overlay so content under splash isn't visible */
+
+  /* user request: remove dark/blur feel */
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .splash__inner {
@@ -67,9 +68,7 @@ body { min-height: 100vh; }
 }
 
 @media (min-width: 768px) {
-  .splash__inner {
-    width: min(420px, 34vw);
-  }
+  .splash__inner { width: min(420px, 34vw); }
 }
 
 /* After-load characters (shown after splash is removed) */
@@ -78,11 +77,11 @@ body { min-height: 100vh; }
   inset: 0;
   z-index: 10;
 
-  /* hidden until splash is removed */
+  /* hidden until JS adds is-visible */
   display: none;
 
   padding: 24px;
-  pointer-events: none; /* characters are decorative for now */
+  pointer-events: none; /* decorative for now */
 }
 
 .afterload.is-visible {
@@ -90,26 +89,31 @@ body { min-height: 100vh; }
   place-items: center;
 }
 
-.afterload__row {
-  display: flex;
+/* 2x2 layout */
+.afterload__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  justify-content: center;
+  justify-items: center;
   gap: 24px;
 }
 
 .afterload__img {
-  width: 204px;
-  height: 204px;
+  width: var(--char-size);
+  height: var(--char-size);
   display: block;
 
   image-rendering: pixelated;
   -webkit-tap-highlight-color: transparent;
 }
 
+/* tablet */
+@media (max-width: 1024px) {
+  :root { --char-size: 192px; }
+}
+
+/* mobile */
 @media (max-width: 420px) {
-  .afterload__row { gap: 16px; }
-  .afterload__img {
-    width: 168px;
-    height: 168px;
-  }
+  .afterload__grid { gap: 16px; }
+  :root { --char-size: 168px; }
 }

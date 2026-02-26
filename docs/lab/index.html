@@ -6,25 +6,41 @@
   <title>CR-bday-2026 · LAB</title>
   <meta name="description" content="CR-bday-2026 반응형(모바일/태블릿/PC) 레이아웃 실험실" />
 
-  <!-- CSS (배경 타일은 style.css에서 적용: bg_tile.jpeg) -->
-  <link rel="stylesheet" href="./style.css?v=20260226_1" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css?v=20260227_3" />
 </head>
+
 <body>
-  <!-- First screen splash -->
+  <!-- Loading splash -->
   <div id="splash" class="splash" aria-label="인트로 화면">
     <div class="splash__inner">
-      <img id="loadGif" class="splash__img" src="./assets/load.gif" alt="Loading" width="320" height="180" decoding="async" />
+      <img
+        id="loadGif"
+        class="splash__img"
+        src="./assets/load.gif"
+        alt="Loading"
+        width="320"
+        height="180"
+        decoding="async"
+      />
     </div>
   </div>
 
-  <!-- After-load characters -->
-  <div id="afterLoad" class="afterload is-visible" aria-label="캐릭터">
-    <div class="afterload__row" role="group" aria-label="캐릭터 2명">
+  <!-- Characters (2x2 centered) -->
+  <div id="afterLoad" class="afterload" aria-label="캐릭터">
+    <div class="afterload__grid" role="group" aria-label="캐릭터 4명">
+      <!-- TL -->
       <img class="afterload__img" src="./assets/char-1.png" alt="Character 1" width="204" height="204" decoding="async" />
+      <!-- TR -->
       <img class="afterload__img" src="./assets/char-2.png" alt="Character 2" width="204" height="204" decoding="async" />
+      <!-- BL -->
+      <img class="afterload__img" src="./assets/char-3.png" alt="Character 3" width="204" height="204" decoding="async" />
+      <!-- BR -->
+      <img class="afterload__img" src="./assets/char-4.png" alt="Character 4" width="204" height="204" decoding="async" />
     </div>
   </div>
 
-  <script src="./app.js?v=20260226_1" defer></script>
+  <!-- JS -->
+  <script src="./app.js?v=20260227_3" defer></script>
 </body>
 </html>
