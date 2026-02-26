@@ -46,7 +46,7 @@ body { min-height: 100vh; }
   place-items: center;
 
   padding: 16px;
-  background: transparent; /* no blur / no overlay */
+  background: rgba(0, 0, 0, 0.85); /* dim overlay so content under splash isn't visible */
 }
 
 .splash__inner {
@@ -78,11 +78,16 @@ body { min-height: 100vh; }
   inset: 0;
   z-index: 10;
 
-  display: grid;
-  place-items: center;
+  /* hidden until splash is removed */
+  display: none;
 
   padding: 24px;
   pointer-events: none; /* characters are decorative for now */
+}
+
+.afterload.is-visible {
+  display: grid;
+  place-items: center;
 }
 
 .afterload__row {
