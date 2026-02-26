@@ -23,36 +23,6 @@
       <img class="afterload__img" src="./assets/char-2.png" alt="Character 2" width="204" height="204" decoding="async" />
     </div>
   </div>
-  <script>
-    (function () {
-      const splash = document.getElementById('splash');
-      if (!splash) return;
-
-      // Force GIF to restart from frame 1 on every load/refresh (cache-bust)
-      function setLoadGifSrc() {
-        const loadGif = document.getElementById('loadGif');
-        if (loadGif) {
-          loadGif.src = `./assets/load.gif?cb=${Date.now()}`;
-        }
-      }
-
-      // Initial set
-      setLoadGifSrc();
-
-      // Also handle Safari bfcache (back/forward cache)
-      window.addEventListener('pageshow', setLoadGifSrc);
-
-      function closeSplash() {
-        splash.remove();
-        const after = document.getElementById('afterLoad');
-        if (after) after.classList.add('is-visible');
-      }
-
-      // Auto-close after 3.5s (manual button removed)
-      setTimeout(() => {
-        if (document.body.contains(splash)) closeSplash();
-      }, 3500);
-    })();
-  </script>
+  <script src="./app.js" defer></script>
 </body>
 </html>
