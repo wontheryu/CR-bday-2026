@@ -40,8 +40,10 @@ body { min-height: 100vh; }
   inset: 0;
   z-index: 9999;
 
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
   padding: 16px;
 
@@ -51,8 +53,8 @@ body { min-height: 100vh; }
 }
 
 .splash__inner {
-  width: min(360px, 86vw);
-  max-width: 520px;
+  width: min(640px, 92vw);
+  max-width: 640px;
 
   display: grid;
   place-items: center;
@@ -65,10 +67,12 @@ body { min-height: 100vh; }
 
   image-rendering: pixelated;
   -webkit-tap-highlight-color: transparent;
+  max-width: 100%;
+  height: auto;
 }
 
 @media (min-width: 768px) {
-  .splash__inner { width: min(420px, 34vw); }
+  .splash__inner { width: min(720px, 46vw); max-width: 720px; }
 }
 
 /* After-load characters (shown after splash is removed) */

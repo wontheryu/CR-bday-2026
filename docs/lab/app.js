@@ -1,4 +1,3 @@
-// docs/lab/app.js
 (() => {
   const splash = document.getElementById('splash');
   const after = document.getElementById('afterLoad');
