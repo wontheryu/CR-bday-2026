@@ -14,7 +14,7 @@
   function restartGif() {
     loadGif.removeAttribute('src');
     requestAnimationFrame(() => {
-      loadGif.src = `./assets/load.gif?cb=${Date.now()}`;
+      loadGif.src = `./assets/load-bit.gif?cb=${Date.now()}`;
     });
   }
 
