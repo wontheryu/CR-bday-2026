@@ -21,6 +21,7 @@
   async function preloadCharacters() {
     const imgs = Array.from(after.querySelectorAll('img'));
     if (imgs.length === 0) return;
+
     await Promise.all(
       imgs.map((img) => (img.decode ? img.decode().catch(() => {}) : Promise.resolve()))
     );
