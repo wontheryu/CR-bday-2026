@@ -35,35 +35,30 @@ body { min-height: 100vh; }
 @supports (min-height: 100dvh) { body { min-height: 100dvh; } }
 
 /* Splash (loading screen) */
-/* Splash (loading screen) */
 .splash {
   position: fixed;
   inset: 0;
   z-index: 9999;
 
-  /* iOS/모바일에서도 중앙 고정 안정화 */
   width: 100%;
   height: 100%;
   min-height: 100vh;
-}
-@supports (min-height: 100svh) { .splash { min-height: 100svh; } }
-@supports (min-height: 100dvh) { .splash { min-height: 100dvh; } }
 
-.splash {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
 
-  /* 투명 배경으로 변경 (no black/blur) */
+  /* 투명 배경 (no black/blur) */
   background: transparent;
   backdrop-filter: none;
 
-  overflow: hidden; /* 확대 시 잘림 방지/안정 */
+  overflow: hidden;
 }
+@supports (min-height: 100svh) { .splash { min-height: 100svh; } }
+@supports (min-height: 100dvh) { .splash { min-height: 100dvh; } }
 
 .splash__inner {
-  /* 핵심: 모바일에서 '짧은 변' 기준 + 스케일로 2배 느낌 */
   width: min(100vmin, 720px);
   aspect-ratio: 1 / 1;
 
@@ -71,12 +66,11 @@ body { min-height: 100vh; }
   justify-content: center;
   align-items: center;
 
-  /* ✅ 정수배 느낌의 확대 (원하면 2로 올려) */
   transform: scale(1.4);
   transform-origin: center;
 }
 
-@media (max-width: 420pxㄴ) {
+@media (max-width: 420px) {
   .splash__inner {
     width: min(92vmin, 520px);
     transform: scale(1.1);
@@ -96,7 +90,6 @@ body { min-height: 100vh; }
   -webkit-tap-highlight-color: transparent;
 }
 
-/* PC에서는 과하게 커지지 않게 살짝 줄임 */
 @media (min-width: 768px) {
   .splash__inner {
     width: min(70vmin, 900px);
@@ -110,8 +103,7 @@ body { min-height: 100vh; }
   inset: 0;
   z-index: 10;
 
-  /* hidden until JS adds is-visible */
-  display: none;
+  display: none; /* hidden until JS adds is-visible */
 
   padding: 24px;
   pointer-events: none; /* decorative for now */
@@ -122,7 +114,6 @@ body { min-height: 100vh; }
   place-items: center;
 }
 
-/* 2x2 layout */
 .afterload__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -140,12 +131,10 @@ body { min-height: 100vh; }
   -webkit-tap-highlight-color: transparent;
 }
 
-/* tablet */
 @media (max-width: 1024px) {
   :root { --char-size: 192px; }
 }
 
-/* mobile */
 @media (max-width: 420px) {
   .afterload__grid { gap: 16px; }
   :root { --char-size: 168px; }

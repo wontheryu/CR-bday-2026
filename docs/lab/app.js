@@ -4,7 +4,7 @@
   const loadGif = document.getElementById('loadGif');
 
   // 필수 DOM이 없으면 종료
-  if (!after || !loadGif) return;
+  if (!splash || !after || !loadGif) return;
 
   // 로딩 중에는 캐릭터 숨김
   after.classList.remove('is-visible');
@@ -46,10 +46,7 @@
     restartGif();
   });
 
-  // 로딩 노출 시간 X를 정규분포 N(4, 1) (초)에서 샘플링하되, X > 2.5s 조건 적용
-  // 그리고 "GIF가 끝난 뒤" 전환되도록, 기존 GIF 한 사이클(3.5s) 단위로 올림(ceil) 처리
-  const GIF_LOOP_MS = 3500; // 기존 세팅(변화 주지 않기)
-
+  // 로딩 노출 시간 X ~ N(4,1) (초), 단 X > 2.5초
   function sampleNormalSeconds(mean = 4, std = 1) {
     // Box–Muller transform
     let u = 0;
@@ -59,18 +56,15 @@
     const z = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
     return mean + std * z;
   }
-
   function getRandomSplashDurationMs() {
-    const MIN_MS = 2500;
-    // 조건을 만족할 때까지 샘플링(보통 1~2번 내로 통과)
-    let ms = Math.round(sampleNormalSeconds(4, 1) * 1000);
-    while (ms <= MIN_MS) {
-      ms = Math.round(sampleNormalSeconds(4, 1) * 1000);
-    }
+  const MIN_MS = 2500;
+  const MAX_MS = 8000;
 
-    // GIF가 끝난 뒤에만 전환되도록 GIF 한 사이클 단위로 올림
-    const cycles = Math.ceil(ms / GIF_LOOP_MS);
-    return cycles * GIF_LOOP_MS;
+  let ms = Math.round(sampleNormalSeconds(4, 1) * 1000);
+  while (ms <= MIN_MS || ms > MAX_MS) {
+    ms = Math.round(sampleNormalSeconds(4, 1) * 1000);
+  }
+  return ms;
   }
 
   const splashDurationMs = getRandomSplashDurationMs();
