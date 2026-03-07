@@ -6,7 +6,7 @@
   // 필수 DOM이 없으면 종료
   if (!splash || !after || !loadGif) return;
 
-  // 로딩 중에는 캐릭터 숨김
+  // 로딩 중에는 헤더 숨김
   after.classList.remove('is-visible');
 
   // GIF를 항상 1프레임부터 시작시키기(강제 리셋)
@@ -17,7 +17,7 @@
     });
   }
 
-  // 캐릭터 이미지 깜빡임 방지: 디코드 대기(지원 안 하면 즉시 통과)
+  // afterLoad 내부 이미지 디코드 대기(지원 안 하면 즉시 통과)
   async function preloadCharacters() {
     const imgs = Array.from(after.querySelectorAll('img'));
     if (imgs.length === 0) return;

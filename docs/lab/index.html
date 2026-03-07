@@ -26,13 +26,27 @@
     </div>
   </div>
 
-  <!-- Characters (2x2 centered) -->
-  <div id="afterLoad" class="afterload" aria-label="캐릭터">
-    <div class="afterload__grid" role="group" aria-label="캐릭터 4명">
-      <img class="afterload__img" src="./assets/char-1.png" alt="Character 1" width="204" height="204" decoding="async" />
-      <img class="afterload__img" src="./assets/char-2.png" alt="Character 2" width="204" height="204" decoding="async" />
-      <img class="afterload__img" src="./assets/char-3.png" alt="Character 3" width="204" height="204" decoding="async" />
-      <img class="afterload__img" src="./assets/char-4.png" alt="Character 4" width="204" height="204" decoding="async" />
+  <!-- Header demo (shown after splash is removed) -->
+  <div id="afterLoad" class="afterload" aria-label="헤더 데모">
+    <div class="hero-header" aria-label="로딩 605 퍼센트 스타일의 레트로 헤더 프레임">
+      <div class="hero-header__lang" aria-label="언어 선택">
+        <button type="button" class="hero-header__lang-btn is-active" aria-pressed="true">KO</button>
+        <span class="hero-header__lang-divider" aria-hidden="true">|</span>
+        <button type="button" class="hero-header__lang-btn" aria-pressed="false">EN</button>
+      </div>
+
+      <div class="hero-header__image-wrap">
+        <img
+          class="hero-header__image"
+          src="./assets/header.png"
+          alt="LOADING 605 퍼센트 헤더"
+          width="512"
+          height="512"
+          decoding="async"
+        />
+      </div>
+
+      <div class="hero-header__frame" aria-hidden="true"></div>
     </div>
   </div>
 
