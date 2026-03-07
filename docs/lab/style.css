@@ -6,7 +6,7 @@
 
   /* background tile */
   --tile-url: url("./assets/bg_tile_dark_256.jpg");
-  --tile-size: 128px;
+  --tile-size: 256px;
 
   /* character size by device */
   --char-size: 204px; /* desktop */
