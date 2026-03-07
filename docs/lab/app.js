@@ -56,15 +56,16 @@
     const z = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
     return mean + std * z;
   }
-  function getRandomSplashDurationMs() {
-  const MIN_MS = 2500;
-  const MAX_MS = 8000;
 
-  let ms = Math.round(sampleNormalSeconds(4, 1) * 1000);
-  while (ms <= MIN_MS || ms > MAX_MS) {
-    ms = Math.round(sampleNormalSeconds(4, 1) * 1000);
-  }
-  return ms;
+  function getRandomSplashDurationMs() {
+    const MIN_MS = 2500;
+    const MAX_MS = 8000;
+
+    let ms = Math.round(sampleNormalSeconds(4, 1) * 1000);
+    while (ms <= MIN_MS || ms > MAX_MS) {
+      ms = Math.round(sampleNormalSeconds(4, 1) * 1000);
+    }
+    return ms;
   }
 
   const splashDurationMs = getRandomSplashDurationMs();

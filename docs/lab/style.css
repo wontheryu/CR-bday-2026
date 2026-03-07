@@ -3,13 +3,11 @@
 :root {
   --bg-fallback: #0b1020;
   --fg: #e8f0ff;
-  --pixel-gold: #d7b45a;
-  --pixel-gold-shadow: #8f6b1f;
   --frame-gap: clamp(12px, 3vw, 36px);
   --frame-stroke: clamp(2px, 0.28vw, 4px);
   --lang-size: clamp(15px, 1.5vw, 28px);
-  --eyebrow-size: clamp(22px, 2.8vw, 56px);
-  --title-size: clamp(78px, 15vw, 240px);
+  --header-image-width: clamp(260px, 26vw, 360px);
+  --header-top-offset: clamp(84px, 11vh, 132px);
 
   /* background tile */
   --tile-url: url("./assets/bg_tile_dark_256.jpg");
@@ -24,7 +22,7 @@ body {
   margin: 0;
   color: var(--fg);
   font-family: system-ui, -apple-system, sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
 
   background-color: var(--bg-fallback);
   background-image: var(--tile-url);
@@ -33,43 +31,35 @@ body {
   background-size: var(--tile-size) var(--tile-size);
 }
 
-/* Prefer modern viewport units when available (mobile browser UI friendly) */
 body { min-height: 100vh; }
 @supports (min-height: 100svh) { body { min-height: 100svh; } }
 @supports (min-height: 100dvh) { body { min-height: 100dvh; } }
 
-/* Splash (loading screen) */
 .splash {
   position: fixed;
   inset: 0;
   z-index: 9999;
-
   width: 100%;
   height: 100%;
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
-
-  /* 투명 배경 (no black/blur) */
   background: transparent;
   backdrop-filter: none;
-
   overflow: hidden;
 }
+
 @supports (min-height: 100svh) { .splash { min-height: 100svh; } }
 @supports (min-height: 100dvh) { .splash { min-height: 100dvh; } }
 
 .splash__inner {
   width: min(100vmin, 720px);
   aspect-ratio: 1 / 1;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   transform: scale(1.4);
   transform-origin: center;
 }
@@ -85,11 +75,9 @@ body { min-height: 100vh; }
   width: 100%;
   height: 100%;
   object-fit: contain;
-
   display: block;
   user-select: none;
   pointer-events: none;
-
   image-rendering: pixelated;
   -webkit-tap-highlight-color: transparent;
 }
@@ -101,7 +89,6 @@ body { min-height: 100vh; }
   }
 }
 
-/* After-load header demo */
 .afterload {
   position: fixed;
   inset: 0;
@@ -127,7 +114,7 @@ body { min-height: 100vh; }
   position: absolute;
   top: max(var(--frame-gap), env(safe-area-inset-top));
   right: max(var(--frame-gap), env(safe-area-inset-right));
-  z-index: 3;
+  z-index: 4;
   display: inline-flex;
   align-items: center;
   gap: 0.35em;
@@ -152,29 +139,24 @@ body { min-height: 100vh; }
   cursor: default;
 }
 
-.hero-header__lang-btn.is-active {
-  opacity: 1;
-}
-
-.hero-header__lang-btn:not(.is-active) {
-  opacity: 0.82;
-}
+.hero-header__lang-btn.is-active { opacity: 1; }
+.hero-header__lang-btn:not(.is-active) { opacity: 0.82; }
 
 .hero-header__image-wrap {
   position: absolute;
   inset: var(--frame-gap);
   z-index: 3;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: var(--header-top-offset);
+  pointer-events: none;
 }
 
 .hero-header__image {
-  width: 100%;
-  height: 100%;
+  width: var(--header-image-width);
   max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center;
+  height: auto;
   display: block;
   image-rendering: pixelated;
   pointer-events: none;
@@ -184,7 +166,7 @@ body { min-height: 100vh; }
 .hero-characters {
   position: absolute;
   left: 50%;
-  top: 56%;
+  top: 58%;
   z-index: 2;
   transform: translate(-50%, -50%);
   width: min(76vw, 560px);
@@ -206,8 +188,8 @@ body { min-height: 100vh; }
 
 .hero-header__frame {
   position: absolute;
-  z-index: 1;
   inset: var(--frame-gap);
+  z-index: 1;
   border: var(--frame-stroke) solid rgba(232, 240, 255, 0.98);
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.12),
@@ -217,10 +199,12 @@ body { min-height: 100vh; }
 @media (max-width: 1024px) {
   :root {
     --frame-gap: clamp(14px, 3.2vw, 28px);
+    --header-image-width: clamp(220px, 30vw, 320px);
+    --header-top-offset: clamp(72px, 10vh, 110px);
   }
 
   .hero-characters {
-    top: 58%;
+    top: 56%;
     width: min(82vw, 500px);
     gap: 18px;
   }
@@ -234,10 +218,12 @@ body { min-height: 100vh; }
   :root {
     --frame-gap: clamp(14px, 4vw, 22px);
     --lang-size: clamp(14px, 3.8vw, 20px);
+    --header-image-width: clamp(180px, 42vw, 260px);
+    --header-top-offset: clamp(66px, 9vh, 96px);
   }
 
   .hero-characters {
-    top: 60%;
+    top: 57%;
     width: min(86vw, 420px);
     gap: 14px;
   }
@@ -251,10 +237,17 @@ body { min-height: 100vh; }
   :root {
     --frame-gap: clamp(12px, 4vw, 18px);
     --frame-stroke: 2px;
+    --header-image-width: clamp(160px, 46vw, 220px);
+    --header-top-offset: clamp(56px, 8vh, 82px);
+  }
+
+  .hero-header__lang {
+    top: max(10px, env(safe-area-inset-top));
+    right: max(10px, env(safe-area-inset-right));
   }
 
   .hero-characters {
-    top: 61%;
+    top: 56%;
     width: min(88vw, 340px);
     gap: 10px;
   }
