@@ -5,7 +5,7 @@
   --fg: #e8f0ff;
 
   /* background tile */
-  --tile-url: url("./assets/bg_tile_dark.jpeg");
+  --tile-url: url("./assets/bg_tile_dark_256.jpg");
   --tile-size: 128px;
 
   /* character size by device */
