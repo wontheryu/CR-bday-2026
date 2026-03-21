@@ -10,8 +10,8 @@ body.is-loaded #home-screen {
   align-items: center;
   justify-content: center;
   padding:
-    clamp(24px, 6vh, 48px)
-    clamp(16px, 4vw, 28px);
+    clamp(24px, 5vh, 48px)
+    clamp(16px, 3vw, 28px);
 }
 
 .page-card {
@@ -73,16 +73,6 @@ body.is-loaded #home-screen {
 
 @media (max-width: 480px) {
   .loading-box {
-    width: min(82vw, 360px);
-  }
-
-  .home-menu {
-    width: min(74vw, 286px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .home-menu {
-    width: min(22vw, 320px);
+    width: min(100%, 360px);
   }
 }

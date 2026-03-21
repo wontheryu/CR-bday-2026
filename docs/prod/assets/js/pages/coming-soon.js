@@ -1,17 +1,16 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    const response = await fetch("../data/content.json");
-
-    if (!response.ok) {
-      throw new Error(`콘텐츠 응답 오류: ${response.status}`);
-    }
-
-    const content = await response.json();
-    applyPlaceholderContent(content);
-  } catch (error) {
-    console.error("페이지 콘텐츠 로드 실패:", error);
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  const content = getContent();
+  applyPlaceholderContent(content);
 });
+
+function getContent() {
+  if (window.SITE_CONTENT) {
+    return window.SITE_CONTENT;
+  }
+
+  console.error("SITE_CONTENT가 없습니다.");
+  return {};
+}
 
 function applyPlaceholderContent(content) {
   const pageId = window.location.hash.replace("#", "");

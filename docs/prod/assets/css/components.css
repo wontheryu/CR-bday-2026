@@ -1,11 +1,11 @@
 .loading-box {
-  width: min(82vw, 560px);
+  width: min(100%, 560px);
   padding: clamp(22px, 4vw, 34px);
   text-align: center;
 }
 
 .loading-art {
-  width: min(100%, 480px);
+  width: min(100%, 460px);
   margin: 0 auto 24px;
   image-rendering: pixelated;
 }

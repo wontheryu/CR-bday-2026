@@ -1,24 +1,19 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    const content = await loadContent("./data/content.json");
+document.addEventListener("DOMContentLoaded", () => {
+  const content = getContent();
 
-    applyMeta(content);
-    applyLoading(content);
-    applyHeader(content);
-    renderMenu(content);
-  } catch (error) {
-    console.error("콘텐츠 로드 실패:", error);
-  }
+  applyMeta(content);
+  applyLoading(content);
+  applyHeader(content);
+  renderMenu(content);
 });
 
-async function loadContent(path) {
-  const response = await fetch(path);
-
-  if (!response.ok) {
-    throw new Error(`콘텐츠 응답 오류: ${response.status}`);
+function getContent() {
+  if (window.SITE_CONTENT) {
+    return window.SITE_CONTENT;
   }
 
-  return response.json();
+  console.error("SITE_CONTENT가 없습니다.");
+  return {};
 }
 
 function applyMeta(content) {

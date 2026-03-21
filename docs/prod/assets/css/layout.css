@@ -1,14 +1,21 @@
 .app-frame {
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  min-height: 100svh;
-  padding: var(--frame-gap);
+  width: min(
+    calc(100vw - (var(--viewport-pad) * 2)),
+    calc((100svh - (var(--viewport-pad) * 2)) * var(--app-ratio)),
+    var(--app-max-width)
+  );
+  max-width: 100%;
+  max-height: calc(100svh - (var(--viewport-pad) * 2));
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .frame-layer {
   position: absolute;
   pointer-events: none;
+  z-index: 2;
 }
 
 .frame-layer-outer {
@@ -39,6 +46,7 @@
   height: 100%;
   overflow: hidden;
   isolation: isolate;
+  z-index: 3;
 }
 
 .screen::before {
@@ -69,17 +77,14 @@
 .loading-screen {
   align-items: center;
   justify-content: center;
-  padding: clamp(20px, 5vw, 40px);
+  padding: clamp(24px, 4vw, 40px);
 }
 
 .home-screen {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding:
-    clamp(12px, 2.4vh, 24px)
-    clamp(18px, 4vw, 36px)
-    clamp(18px, 4vh, 34px);
+  padding: clamp(24px, 3vw, 38px);
 }
 
 .home-screen.is-active {
@@ -89,17 +94,16 @@
 
 .home-stage {
   margin: 0 auto;
-  width: var(--stage-width);
-  max-width: 620px;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
   display: grid;
   justify-items: center;
   align-content: center;
-  gap: clamp(14px, 2vh, 22px);
+  gap: clamp(18px, 2vh, 28px);
   padding:
-    0
-    clamp(14px, 3vw, 24px)
-    clamp(18px, 4vh, 30px);
+    clamp(24px, 4vh, 48px)
+    clamp(20px, 3vw, 36px)
+    clamp(36px, 5vh, 60px);
   transform: translateY(var(--stage-shift-y));
 }
 
@@ -126,20 +130,25 @@
   display: flex;
   flex-direction: column;
   gap: var(--menu-gap);
-  margin-top: clamp(4px, 0.8vh, 10px);
+  margin-top: clamp(4px, 0.7vh, 12px);
   margin-inline: auto;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 900px) {
   .home-stage {
-    gap: 18px;
+    padding-top: clamp(18px, 3vh, 28px);
+    padding-bottom: clamp(28px, 4vh, 42px);
+  }
+}
+
+@media (max-width: 640px) {
+  .app-frame {
+    width: calc(100vw - (var(--viewport-pad) * 2));
   }
 
-  .home-header {
-    width: min(100%, 430px);
-  }
-
-  .home-menu {
-    width: min(24vw, 320px);
+  .home-stage {
+    gap: 14px;
+    padding-inline: 14px;
+    transform: translateY(0);
   }
 }
