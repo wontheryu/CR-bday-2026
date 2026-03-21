@@ -1,25 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loadingFill = document.getElementById("loading-bar-fill");
-  const loadingText = document.getElementById("loading-text");
 
   const loadingDuration = getRandomLoadingDuration();
   const startTime = performance.now();
-
-  const loadingMessages = [
-    "시스템 접속 중",
-    "메인 화면 불러오는 중",
-    "비트 프레임 구성 중",
-    "입장 준비 완료 직전"
-  ];
-
-  let messageIndex = 0;
-
-  const messageInterval = setInterval(() => {
-    messageIndex = (messageIndex + 1) % loadingMessages.length;
-    if (loadingText) {
-      loadingText.textContent = loadingMessages[messageIndex];
-    }
-  }, 900);
 
   function animate(now) {
     const elapsed = now - startTime;
@@ -34,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    clearInterval(messageInterval);
     showHomeScreen();
   }
 
@@ -42,12 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function getRandomLoadingDuration() {
-  const mean = 4000;
-  const stdDev = 400;
+  const mean = 2500;
+  const stdDev = 1000;
   let value = gaussianRandom(mean, stdDev);
 
-  value = Math.max(value, 3200);
-  value = Math.min(value, 6500);
+  value = Math.max(value, 1500);
+  value = Math.min(value, 4000);
 
   return value;
 }

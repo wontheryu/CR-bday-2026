@@ -5,25 +5,20 @@
   },
   "home": {
     "headerAlt": "생일카페 메인 헤더",
-    "statusLabel": "MAIN MENU",
-    "subtitle": "원하는 안내 메뉴를 선택해 주세요. 각 페이지는 순차적으로 업데이트됩니다.",
     "menuButtons": [
       {
         "id": "about",
         "label": "ABOUT",
-        "tag": "INFO",
         "link": "./pages/coming-soon.html#about"
       },
       {
         "id": "notice",
         "label": "NOTICE",
-        "tag": "READ",
         "link": "./pages/coming-soon.html#notice"
       },
       {
         "id": "location",
         "label": "LOCATION",
-        "tag": "MAP",
         "link": "./pages/coming-soon.html#location"
       }
     ]

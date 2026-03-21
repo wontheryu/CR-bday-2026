@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     applyMeta(content);
     applyHeader(content);
-    applyHomeCopy(content);
     renderMenu(content);
   } catch (error) {
     console.error("콘텐츠 로드 실패:", error);
@@ -36,19 +35,6 @@ function applyHeader(content) {
   }
 }
 
-function applyHomeCopy(content) {
-  const statusElement = document.querySelector("[data-home-status]");
-  const subtitleElement = document.querySelector("[data-home-subtitle]");
-
-  if (statusElement && content?.home?.statusLabel) {
-    statusElement.textContent = content.home.statusLabel;
-  }
-
-  if (subtitleElement && content?.home?.subtitle) {
-    subtitleElement.textContent = content.home.subtitle;
-  }
-}
-
 function renderMenu(content) {
   const menu = document.querySelector(".home-menu");
   const items = content?.home?.menuButtons || [];
@@ -66,8 +52,6 @@ function renderMenu(content) {
     button.className = "pixel-button menu-button";
     button.type = "button";
     button.dataset.link = link;
-    button.dataset.menuIndex = String(index + 1).padStart(2, "0");
-    button.dataset.menuTag = item?.tag || (isDisabled ? "LOCK" : "ENTER");
 
     if (isDisabled) {
       button.classList.add("is-disabled");

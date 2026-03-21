@@ -28,11 +28,14 @@
         aria-live="polite"
       >
         <div class="loading-box pixel-panel">
-          <p class="loading-title">LOADING...</p>
+          <img
+            src="./assets/img/Loading.png"
+            alt="로딩"
+            class="loading-art"
+          />
           <div class="loading-bar">
             <div id="loading-bar-fill" class="loading-bar-fill"></div>
           </div>
-          <p id="loading-text" class="loading-text">시스템 접속 중</p>
         </div>
       </section>
 
@@ -42,8 +45,6 @@
         aria-hidden="true"
       >
         <div class="home-stage">
-          <p class="home-status" data-home-status>MAIN MENU</p>
-
           <header class="home-header">
             <img
               src="./assets/img/header.png"
@@ -51,10 +52,6 @@
               class="site-header-image"
             />
           </header>
-
-          <p class="home-subtitle" data-home-subtitle>
-            원하는 안내 메뉴를 선택해 주세요.
-          </p>
 
           <nav class="home-menu" aria-label="메인 메뉴"></nav>
         </div>
