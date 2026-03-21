@@ -15,20 +15,21 @@
   --text-sub: #cfcfcf;
   --text-dim: #8a93a8;
 
-  --viewport-pad: clamp(12px, 1.8vw, 24px);
-  --app-ratio: 1.77777778;
-  --app-max-width: 1920px;
+  --viewport-pad: 16px;
+  --scene-width: 1600px;
+  --scene-height: 900px;
+  --scene-scale: 1;
 
-  --frame-gap: clamp(12px, 1.1vw, 22px);
-  --frame-thick: clamp(5px, 0.52vw, 10px);
-  --frame-inner-gap: clamp(8px, 0.9vw, 18px);
+  --frame-gap: 16px;
+  --frame-thick: 8px;
+  --frame-inner-gap: 12px;
 
-  --header-width: clamp(280px, 23vw, 420px);
-  --header-shift-y: -0.312;
-  --menu-width: clamp(300px, 20vw, 420px);
-  --menu-button-height: clamp(60px, 4.2vw, 74px);
-  --menu-gap: clamp(10px, 0.95vw, 16px);
-  --stage-shift-y: clamp(-20px, -1.5vw, -8px);
+  --header-width: 300px;
+  --header-top: 252px;
+  --menu-width: 380px;
+  --menu-top: 432px;
+  --menu-button-height: 76px;
+  --menu-gap: 18px;
 
   --font-pixel: "Press Start 2P", "DungGeunMo", "VT323", monospace;
 }
@@ -46,6 +47,17 @@ body {
     radial-gradient(circle at top, rgba(37, 53, 91, 0.22), transparent 42%),
     var(--bg-deep);
   overflow: hidden;
+}
+
+body:not(.is-scene-ready) .scene-shell {
+  visibility: hidden;
+}
+
+.scene-shell {
+  position: relative;
+  width: calc(var(--scene-width) * var(--scene-scale));
+  height: calc(var(--scene-height) * var(--scene-scale));
+  flex: 0 0 auto;
 }
 
 .site-bg {
@@ -96,7 +108,7 @@ body {
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: clamp(14px, 1vw, 18px);
+  font-size: 18px;
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--line-dark);
   transition: transform 0.08s ease, filter 0.08s ease, background-color 0.08s ease;
@@ -125,27 +137,4 @@ body {
   color: var(--text-dim);
   filter: saturate(0.2);
   pointer-events: none;
-}
-
-@media (max-width: 900px) {
-  :root {
-    --header-width: clamp(250px, 40vw, 360px);
-    --menu-width: clamp(270px, 46vw, 340px);
-  }
-}
-
-@media (max-width: 640px) {
-  :root {
-    --viewport-pad: 12px;
-    --frame-gap: 10px;
-    --frame-thick: 4px;
-    --frame-inner-gap: 6px;
-    --header-width: clamp(220px, 58vw, 300px);
-    --menu-width: clamp(240px, 66vw, 310px);
-    --menu-button-height: clamp(48px, 10vw, 60px);
-  }
-
-  .pixel-button {
-    font-size: clamp(12px, 2.8vw, 14px);
-  }
 }

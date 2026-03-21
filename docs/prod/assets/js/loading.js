@@ -6,22 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const loadingDuration = getRandomLoadingDuration();
   const startTime = performance.now();
-
-  function animate(now) {
-    const elapsed = now - startTime;
+  const animationTimer = window.setInterval(() => {
+    const elapsed = performance.now() - startTime;
     const progress = Math.min(elapsed / loadingDuration, 1);
 
     updateLoadingMessages(progress);
 
-    if (progress < 1) {
-      requestAnimationFrame(animate);
-      return;
+    if (progress >= 1) {
+      window.clearInterval(animationTimer);
+      showHomeScreen();
     }
+  }, 80);
 
-    showHomeScreen();
-  }
-
-  requestAnimationFrame(animate);
+  updateLoadingMessages(0);
 });
 
 function shouldShowHomePreview() {

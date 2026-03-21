@@ -3,20 +3,18 @@ body.is-loaded #loading-screen {
 }
 
 body.is-loaded #home-screen {
-  display: grid;
+  display: flex;
 }
 
 .page-shell {
   align-items: center;
   justify-content: center;
-  padding:
-    clamp(24px, 5vh, 48px)
-    clamp(16px, 3vw, 28px);
+  padding: 48px;
 }
 
 .page-card {
-  width: min(100%, 560px);
-  padding: clamp(24px, 5vw, 36px);
+  width: 560px;
+  padding: 36px;
   text-align: center;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%),
@@ -25,7 +23,7 @@ body.is-loaded #home-screen {
 
 .page-kicker {
   color: var(--accent);
-  font-size: clamp(10px, 1.8vw, 12px);
+  font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -38,13 +36,13 @@ body.is-loaded #home-screen {
   color: var(--text-main);
   background: rgba(255, 255, 255, 0.08);
   border: 2px solid rgba(255, 255, 255, 0.16);
-  font-size: clamp(10px, 1.8vw, 12px);
+  font-size: 12px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .page-title {
-  font-size: clamp(18px, 3.6vw, 28px);
+  font-size: 28px;
   line-height: 1.5;
   margin-bottom: 18px;
   text-transform: uppercase;
@@ -53,7 +51,7 @@ body.is-loaded #home-screen {
 .page-copy,
 .page-detail {
   color: var(--text-sub);
-  font-size: clamp(11px, 2vw, 13px);
+  font-size: 13px;
   line-height: 1.9;
 }
 
@@ -69,10 +67,4 @@ body.is-loaded #home-screen {
 .page-link {
   max-width: 280px;
   margin: 0 auto;
-}
-
-@media (max-width: 480px) {
-  .loading-box {
-    width: min(100%, 360px);
-  }
 }

@@ -1,13 +1,11 @@
 .app-frame {
-  position: relative;
-  width: min(
-    calc(100vw - (var(--viewport-pad) * 2)),
-    calc((100svh - (var(--viewport-pad) * 2)) * var(--app-ratio)),
-    var(--app-max-width)
-  );
-  max-width: 100%;
-  max-height: calc(100svh - (var(--viewport-pad) * 2));
-  aspect-ratio: 16 / 9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--scene-width);
+  height: var(--scene-height);
+  transform: scale(var(--scene-scale));
+  transform-origin: top left;
   overflow: hidden;
   isolation: isolate;
 }
@@ -77,43 +75,29 @@
 .loading-screen {
   align-items: center;
   justify-content: center;
-  padding: clamp(24px, 4vw, 40px);
+  padding: 48px;
 }
 
 .home-screen {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(24px, 3vw, 38px);
+  padding: 0;
 }
 
 .home-screen.is-active {
-  display: grid;
-  place-items: center;
+  display: flex;
 }
 
 .home-stage {
-  margin: 0 auto;
+  position: relative;
   width: 100%;
   height: 100%;
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  gap: clamp(18px, 2vh, 28px);
-  padding:
-    clamp(24px, 4vh, 48px)
-    clamp(20px, 3vw, 36px)
-    clamp(36px, 5vh, 60px);
-  transform: translateY(var(--stage-shift-y));
 }
 
 .home-header {
-  width: min(100%, var(--header-width));
-  height: calc(var(--header-width) * 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  overflow: hidden;
+  position: absolute;
+  top: var(--header-top);
+  left: 50%;
+  width: var(--header-width);
+  transform: translateX(-50%);
 }
 
 .site-header-image {
@@ -122,33 +106,15 @@
   max-width: none;
   height: auto;
   image-rendering: pixelated;
-  transform: translateY(calc(var(--header-width) * var(--header-shift-y)));
 }
 
 .home-menu {
+  position: absolute;
+  top: var(--menu-top);
+  left: 50%;
   width: var(--menu-width);
   display: flex;
   flex-direction: column;
   gap: var(--menu-gap);
-  margin-top: clamp(4px, 0.7vh, 12px);
-  margin-inline: auto;
-}
-
-@media (max-width: 900px) {
-  .home-stage {
-    padding-top: clamp(18px, 3vh, 28px);
-    padding-bottom: clamp(28px, 4vh, 42px);
-  }
-}
-
-@media (max-width: 640px) {
-  .app-frame {
-    width: calc(100vw - (var(--viewport-pad) * 2));
-  }
-
-  .home-stage {
-    gap: 14px;
-    padding-inline: 14px;
-    transform: translateY(0);
-  }
+  transform: translateX(-50%);
 }

@@ -16,53 +16,56 @@
   <link rel="stylesheet" href="./assets/css/pages.css" />
 </head>
 <body>
-  <div class="app-frame">
-    <div class="site-bg"></div>
-    <div class="frame-layer frame-layer-outer"></div>
-    <div class="frame-layer frame-layer-inner"></div>
+  <div class="scene-shell">
+    <div class="app-frame">
+      <div class="site-bg"></div>
+      <div class="frame-layer frame-layer-outer"></div>
+      <div class="frame-layer frame-layer-inner"></div>
 
-    <main class="screen">
-      <section
-        id="loading-screen"
-        class="screen-panel loading-screen is-active"
-        aria-live="polite"
-      >
-        <div class="loading-box pixel-panel">
-          <img
-            src="./assets/img/Loading.png"
-            alt="로딩"
-            class="loading-art"
-          />
-          <ul
-            id="loading-message-list"
-            class="loading-message-list"
-            aria-label="로딩 안내 문구"
-          >
-            <li class="loading-message-item is-active">안내 문구를 불러오는 중입니다.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section
-        id="home-screen"
-        class="screen-panel home-screen"
-        aria-hidden="true"
-      >
-        <div class="home-stage">
-          <header class="home-header">
+      <main class="screen">
+        <section
+          id="loading-screen"
+          class="screen-panel loading-screen is-active"
+          aria-live="polite"
+        >
+          <div class="loading-box pixel-panel">
             <img
-              src="./assets/img/header.png"
-              alt="생일카페 헤더"
-              class="site-header-image"
+              src="./assets/img/Loading.png"
+              alt="로딩"
+              class="loading-art"
             />
-          </header>
+            <ul
+              id="loading-message-list"
+              class="loading-message-list"
+              aria-label="로딩 안내 문구"
+            >
+              <li class="loading-message-item is-active">안내 문구를 불러오는 중입니다.</li>
+            </ul>
+          </div>
+        </section>
 
-          <nav class="home-menu" aria-label="메인 메뉴"></nav>
-        </div>
-      </section>
-    </main>
+        <section
+          id="home-screen"
+          class="screen-panel home-screen"
+          aria-hidden="true"
+        >
+          <div class="home-stage">
+            <header class="home-header">
+              <img
+                src="./assets/img/header-cropped.png"
+                alt="생일카페 헤더"
+                class="site-header-image"
+              />
+            </header>
+
+            <nav class="home-menu" aria-label="메인 메뉴"></nav>
+          </div>
+        </section>
+      </main>
+    </div>
   </div>
 
+  <script src="./assets/js/scene.js"></script>
   <script src="./assets/js/content.js"></script>
   <script src="./assets/js/app.js"></script>
   <script src="./assets/js/loading.js"></script>
