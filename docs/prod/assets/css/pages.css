@@ -6,6 +6,71 @@ body.is-loaded #home-screen {
   display: flex;
 }
 
+.page-shell {
+  align-items: center;
+  justify-content: center;
+  padding:
+    clamp(24px, 6vh, 48px)
+    clamp(16px, 4vw, 28px);
+}
+
+.page-card {
+  width: min(100%, 560px);
+  padding: clamp(24px, 5vw, 36px);
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%),
+    var(--panel-glass);
+}
+
+.page-kicker {
+  color: var(--accent);
+  font-size: clamp(10px, 1.8vw, 12px);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.page-section-label {
+  display: inline-flex;
+  margin-bottom: 18px;
+  padding: 6px 10px;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.16);
+  font-size: clamp(10px, 1.8vw, 12px);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.page-title {
+  font-size: clamp(18px, 3.6vw, 28px);
+  line-height: 1.5;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.page-copy,
+.page-detail {
+  color: var(--text-sub);
+  font-size: clamp(11px, 2vw, 13px);
+  line-height: 1.9;
+}
+
+.page-detail {
+  margin-top: 10px;
+  color: var(--text-dim);
+}
+
+.page-actions {
+  margin-top: 28px;
+}
+
+.page-link {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
 @media (max-width: 480px) {
   .loading-box {
     width: min(82vw, 360px);
