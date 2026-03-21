@@ -19,11 +19,11 @@
   --frame-thick: clamp(6px, 1vw, 12px);
   --frame-inner-gap: clamp(8px, 1.5vw, 18px);
 
-  --header-width: min(72vw, 420px);
-  --menu-width: min(78vw, 360px);
-  --menu-button-height: clamp(54px, 8vw, 68px);
-  --menu-gap: clamp(12px, 2vw, 18px);
-  --stage-width: min(100%, 760px);
+  --header-width: min(68vw, 400px);
+  --menu-width: min(74vw, 336px);
+  --menu-button-height: clamp(50px, 6.4vw, 60px);
+  --menu-gap: clamp(10px, 1.4vh, 14px);
+  --stage-width: min(100%, 700px);
   --menu-side-padding: clamp(68px, 10vw, 88px);
 
   --font-pixel: "Press Start 2P", "DungGeunMo", "VT323", monospace;
