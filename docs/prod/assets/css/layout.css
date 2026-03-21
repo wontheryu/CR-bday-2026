@@ -61,7 +61,8 @@
 }
 
 .site-header-image {
-  width: var(--header-width);
+  width: calc(var(--header-width) * 1.5);
+  max-width: 90%;
   height: auto;
   image-rendering: pixelated;
 }
