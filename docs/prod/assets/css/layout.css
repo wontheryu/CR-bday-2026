@@ -56,8 +56,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
-  transform: translateY(-48px);
+  margin-top: -56px;
+  margin-bottom: -12px;
 }
 
 .site-header-image {
@@ -81,7 +81,7 @@
   }
 
   .home-header {
-    margin-bottom: 28px;
-    transform: translateY(-64px);
+    margin-top: -80px;
+    margin-bottom: -20px;
   }
 }
