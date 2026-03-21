@@ -77,12 +77,12 @@ body.is-loaded #home-screen {
   }
 
   .home-menu {
-    width: min(78vw, 304px);
+    width: min(76vw, 292px);
   }
 }
 
 @media (min-width: 1024px) {
   .home-menu {
-    width: min(30vw, 350px);
+    width: min(24vw, 320px);
   }
 }

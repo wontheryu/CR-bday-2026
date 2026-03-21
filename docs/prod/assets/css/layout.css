@@ -75,51 +75,49 @@
 .home-screen {
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding:
-    clamp(4px, 1.4vh, 18px)
+    clamp(12px, 2.4vh, 24px)
     clamp(18px, 4vw, 36px)
-    clamp(20px, 4.5vh, 42px);
+    clamp(18px, 4vh, 34px);
 }
 
 .home-screen.is-active {
   display: grid;
-  justify-items: center;
-  align-content: start;
+  place-items: center;
 }
 
 .home-stage {
   margin: 0 auto;
   width: var(--stage-width);
-  max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  max-width: 640px;
+  min-height: 100%;
+  display: grid;
+  justify-items: center;
+  align-content: center;
   gap: clamp(8px, 1.4vh, 16px);
   padding:
     0
     clamp(14px, 3vw, 24px)
     clamp(18px, 4vh, 30px);
+  transform: translateY(var(--stage-shift-y));
 }
 
 .home-header {
-  width: 100%;
-  height: clamp(174px, 20vw, 228px);
+  width: min(100%, var(--header-width));
+  height: var(--header-crop-height);
   display: flex;
   justify-content: center;
   align-items: flex-start;
   overflow: hidden;
-  margin-top: clamp(-52px, -6vh, -18px);
-  margin-bottom: clamp(-74px, -8vh, -24px);
 }
 
 .site-header-image {
-  width: calc(var(--header-width) * 1.5);
-  max-width: min(92%, 650px);
+  width: min(100%, calc(var(--header-width) * 1.38));
+  max-width: none;
   height: auto;
   image-rendering: pixelated;
-  transform: translateY(-18px);
+  transform: translateY(var(--header-shift-y));
 }
 
 .home-menu {
@@ -127,27 +125,24 @@
   display: flex;
   flex-direction: column;
   gap: var(--menu-gap);
-  margin-top: 0;
+  margin-top: clamp(-2px, -0.2vh, 0px);
   margin-inline: auto;
 }
 
 @media (min-width: 768px) {
   .home-stage {
-    gap: 8px;
+    gap: 10px;
   }
 
   .home-header {
-    height: clamp(190px, 18vw, 234px);
-    margin-top: -66px;
-    margin-bottom: -92px;
+    width: min(100%, 540px);
   }
 
   .site-header-image {
-    max-width: min(88%, 620px);
-    transform: translateY(-28px);
+    width: min(100%, 540px);
   }
 
   .home-menu {
-    width: min(32vw, 350px);
+    width: min(28vw, 328px);
   }
 }
