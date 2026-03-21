@@ -82,9 +82,16 @@
     clamp(24px, 6vh, 48px);
 }
 
+.home-screen.is-active {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+}
+
 .home-stage {
   margin: 0 auto;
   width: var(--stage-width);
+  max-width: 760px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,6 +124,7 @@
   flex-direction: column;
   gap: var(--menu-gap);
   margin-top: 0;
+  margin-inline: auto;
 }
 
 @media (min-width: 768px) {

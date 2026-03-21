@@ -3,7 +3,7 @@ body.is-loaded #loading-screen {
 }
 
 body.is-loaded #home-screen {
-  display: flex;
+  display: grid;
 }
 
 .page-shell {
