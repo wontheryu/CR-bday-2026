@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+  if (shouldShowHomePreview()) {
+    showHomeScreen();
+    return;
+  }
+
   const loadingDuration = getRandomLoadingDuration();
   const startTime = performance.now();
 
@@ -18,6 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   requestAnimationFrame(animate);
 });
+
+function shouldShowHomePreview() {
+  const searchParams = new URLSearchParams(window.location.search);
+  return searchParams.get("preview") === "home";
+}
 
 function getRandomLoadingDuration() {
   const mean = 2500;

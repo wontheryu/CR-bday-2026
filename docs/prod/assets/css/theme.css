@@ -23,11 +23,10 @@
   --frame-thick: clamp(5px, 0.52vw, 10px);
   --frame-inner-gap: clamp(8px, 0.9vw, 18px);
 
-  --header-width: clamp(240px, 20vw, 360px);
-  --header-crop-height: clamp(88px, 7.5vw, 132px);
-  --header-shift-y: clamp(-42px, -3vw, -18px);
-  --menu-width: clamp(280px, 18vw, 380px);
-  --menu-button-height: clamp(58px, 4vw, 72px);
+  --header-width: clamp(280px, 23vw, 420px);
+  --header-shift-y: -0.312;
+  --menu-width: clamp(300px, 20vw, 420px);
+  --menu-button-height: clamp(60px, 4.2vw, 74px);
   --menu-gap: clamp(10px, 0.95vw, 16px);
   --stage-shift-y: clamp(-20px, -1.5vw, -8px);
 
@@ -130,9 +129,8 @@ body {
 
 @media (max-width: 900px) {
   :root {
-    --header-width: clamp(220px, 36vw, 320px);
-    --header-crop-height: clamp(82px, 12vw, 118px);
-    --menu-width: clamp(250px, 42vw, 320px);
+    --header-width: clamp(250px, 40vw, 360px);
+    --menu-width: clamp(270px, 46vw, 340px);
   }
 }
 
@@ -142,10 +140,8 @@ body {
     --frame-gap: 10px;
     --frame-thick: 4px;
     --frame-inner-gap: 6px;
-    --header-width: clamp(190px, 46vw, 260px);
-    --header-crop-height: clamp(72px, 14vw, 96px);
-    --header-shift-y: clamp(-32px, -6vw, -16px);
-    --menu-width: clamp(220px, 56vw, 280px);
+    --header-width: clamp(220px, 58vw, 300px);
+    --menu-width: clamp(240px, 66vw, 310px);
     --menu-button-height: clamp(48px, 10vw, 60px);
   }
 
