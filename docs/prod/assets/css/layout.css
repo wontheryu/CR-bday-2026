@@ -48,7 +48,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: clamp(48px, 8vh, 84px);
+  padding-top: clamp(20px, 4vh, 40px);
   padding-bottom: clamp(28px, 5vh, 40px);
 }
 
@@ -75,7 +75,7 @@
 
 @media (min-width: 768px) {
   .home-screen {
-    padding-top: clamp(64px, 10vh, 104px);
+    padding-top: clamp(28px, 5vh, 56px);
   }
 
   .home-header {
