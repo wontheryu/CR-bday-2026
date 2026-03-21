@@ -48,15 +48,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: clamp(20px, 4vh, 40px);
-  padding-bottom: clamp(28px, 5vh, 40px);
+  padding-top: 0;
+  padding-bottom: clamp(20px, 4vh, 32px);
 }
 
 .home-header {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: clamp(40px, 8vh, 72px);
+  margin-bottom: 20px;
+  transform: translateY(-48px);
 }
 
 .site-header-image {
@@ -75,10 +76,11 @@
 
 @media (min-width: 768px) {
   .home-screen {
-    padding-top: clamp(28px, 5vh, 56px);
+    padding-top: 0;
   }
 
   .home-header {
-    margin-bottom: clamp(52px, 8vh, 84px);
+    margin-bottom: 28px;
+    transform: translateY(-64px);
   }
 }
