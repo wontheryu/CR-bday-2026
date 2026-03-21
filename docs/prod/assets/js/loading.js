@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const loadingFill = document.getElementById("loading-bar-fill");
-
   const loadingDuration = getRandomLoadingDuration();
   const startTime = performance.now();
 
@@ -8,9 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const elapsed = now - startTime;
     const progress = Math.min(elapsed / loadingDuration, 1);
 
-    if (loadingFill) {
-      loadingFill.style.width = `${progress * 100}%`;
-    }
+    updateLoadingMessages(progress);
 
     if (progress < 1) {
       requestAnimationFrame(animate);
@@ -32,6 +28,22 @@ function getRandomLoadingDuration() {
   value = Math.min(value, 4000);
 
   return value;
+}
+
+function updateLoadingMessages(progress) {
+  const items = document.querySelectorAll(".loading-message-item");
+
+  if (!items.length) return;
+
+  const activeIndex = Math.min(
+    Math.floor(progress * items.length),
+    items.length - 1
+  );
+
+  items.forEach((item, index) => {
+    item.classList.toggle("is-complete", index < activeIndex);
+    item.classList.toggle("is-active", index === activeIndex);
+  });
 }
 
 function gaussianRandom(mean, stdDev) {

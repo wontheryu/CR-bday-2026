@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const content = await loadContent("./data/content.json");
 
     applyMeta(content);
+    applyLoading(content);
     applyHeader(content);
     renderMenu(content);
   } catch (error) {
@@ -26,6 +27,17 @@ function applyMeta(content) {
   }
 }
 
+function applyLoading(content) {
+  const loadingArt = document.querySelector(".loading-art");
+  const loadingMessages = content?.loading?.messages || [];
+
+  if (loadingArt && content?.loading?.imageAlt) {
+    loadingArt.alt = content.loading.imageAlt;
+  }
+
+  renderLoadingMessages(loadingMessages);
+}
+
 function applyHeader(content) {
   const headerImage = document.querySelector(".site-header-image");
   if (!headerImage) return;
@@ -33,6 +45,29 @@ function applyHeader(content) {
   if (content?.home?.headerAlt) {
     headerImage.alt = content.home.headerAlt;
   }
+}
+
+function renderLoadingMessages(messages) {
+  const list = document.getElementById("loading-message-list");
+  const safeMessages = messages.length
+    ? messages
+    : ["안내 문구를 입력해 주세요."];
+
+  if (!list) return;
+
+  list.innerHTML = "";
+
+  safeMessages.forEach((message, index) => {
+    const item = document.createElement("li");
+    item.className = "loading-message-item";
+
+    if (index === 0) {
+      item.classList.add("is-active");
+    }
+
+    item.textContent = message;
+    list.appendChild(item);
+  });
 }
 
 function renderMenu(content) {

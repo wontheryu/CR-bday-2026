@@ -3,6 +3,14 @@
     "title": "생일카페 | CR-bday-2026",
     "siteName": "생일카페"
   },
+  "loading": {
+    "imageAlt": "로딩 이미지",
+    "messages": [
+      "행사 안내 데이터를 불러오는 중입니다.",
+      "메인 화면 요소를 정리하는 중입니다.",
+      "입장 화면을 마무리하는 중입니다."
+    ]
+  },
   "home": {
     "headerAlt": "생일카페 메인 헤더",
     "menuButtons": [
