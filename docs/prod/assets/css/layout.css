@@ -90,12 +90,12 @@
 .home-stage {
   margin: 0 auto;
   width: var(--stage-width);
-  max-width: 640px;
+  max-width: 620px;
   min-height: 100%;
   display: grid;
   justify-items: center;
   align-content: center;
-  gap: clamp(8px, 1.4vh, 16px);
+  gap: clamp(14px, 2vh, 22px);
   padding:
     0
     clamp(14px, 3vw, 24px)
@@ -113,7 +113,8 @@
 }
 
 .site-header-image {
-  width: min(100%, calc(var(--header-width) * 1.38));
+  display: block;
+  width: 100%;
   max-width: none;
   height: auto;
   image-rendering: pixelated;
@@ -125,24 +126,20 @@
   display: flex;
   flex-direction: column;
   gap: var(--menu-gap);
-  margin-top: clamp(-2px, -0.2vh, 0px);
+  margin-top: clamp(4px, 0.8vh, 10px);
   margin-inline: auto;
 }
 
 @media (min-width: 768px) {
   .home-stage {
-    gap: 10px;
+    gap: 18px;
   }
 
   .home-header {
-    width: min(100%, 540px);
-  }
-
-  .site-header-image {
-    width: min(100%, 540px);
+    width: min(100%, 430px);
   }
 
   .home-menu {
-    width: min(28vw, 328px);
+    width: min(24vw, 320px);
   }
 }
