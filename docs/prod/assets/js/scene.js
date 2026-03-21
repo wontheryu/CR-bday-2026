@@ -16,11 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
+  function updateSceneMode(viewport) {
+    body.classList.toggle("is-portrait-scene", viewport.height > viewport.width);
+  }
+
   function updateSceneScale() {
-    const sceneWidth = parseFloat(getComputedStyle(root).getPropertyValue("--scene-width"));
-    const sceneHeight = parseFloat(getComputedStyle(root).getPropertyValue("--scene-height"));
-    const viewportPad = parseFloat(getComputedStyle(root).getPropertyValue("--viewport-pad")) || 0;
     const viewport = getViewportSize();
+    updateSceneMode(viewport);
+
+    const computed = getComputedStyle(body);
+    const sceneWidth = parseFloat(computed.getPropertyValue("--scene-width"));
+    const sceneHeight = parseFloat(computed.getPropertyValue("--scene-height"));
+    const viewportPad = parseFloat(computed.getPropertyValue("--viewport-pad")) || 0;
     const availableWidth = Math.max(viewport.width - viewportPad * 2, 0);
     const availableHeight = Math.max(viewport.height - viewportPad * 2, 0);
     const scale = Math.min(availableWidth / sceneWidth, availableHeight / sceneHeight);

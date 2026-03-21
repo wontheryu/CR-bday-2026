@@ -1,21 +1,21 @@
 .loading-box {
-  width: 560px;
-  padding: 28px 32px 30px;
+  width: var(--loading-box-width);
+  padding: var(--loading-box-padding);
   text-align: center;
 }
 
 .loading-art {
-  width: 420px;
+  width: var(--loading-art-width);
   margin: 0 auto 26px;
   image-rendering: pixelated;
 }
 
 .loading-message-list {
-  width: 420px;
+  width: var(--loading-list-width);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--loading-list-gap);
   text-align: left;
 }
 
@@ -23,7 +23,7 @@
   position: relative;
   padding-left: 22px;
   color: var(--text-dim);
-  font-size: 14px;
+  font-size: var(--loading-message-size);
   line-height: 1.85;
   letter-spacing: 0.04em;
 }

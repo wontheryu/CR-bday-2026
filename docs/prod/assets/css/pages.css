@@ -13,8 +13,8 @@ body.is-loaded #home-screen {
 }
 
 .page-card {
-  width: 560px;
-  padding: 36px;
+  width: var(--page-card-width);
+  padding: var(--page-card-padding);
   text-align: center;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%),
@@ -23,7 +23,7 @@ body.is-loaded #home-screen {
 
 .page-kicker {
   color: var(--accent);
-  font-size: 12px;
+  font-size: var(--page-kicker-size);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -36,13 +36,13 @@ body.is-loaded #home-screen {
   color: var(--text-main);
   background: rgba(255, 255, 255, 0.08);
   border: 2px solid rgba(255, 255, 255, 0.16);
-  font-size: 12px;
+  font-size: var(--page-section-size);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .page-title {
-  font-size: 28px;
+  font-size: var(--page-title-size);
   line-height: 1.5;
   margin-bottom: 18px;
   text-transform: uppercase;
@@ -51,7 +51,7 @@ body.is-loaded #home-screen {
 .page-copy,
 .page-detail {
   color: var(--text-sub);
-  font-size: 13px;
+  font-size: var(--page-copy-size);
   line-height: 1.9;
 }
 

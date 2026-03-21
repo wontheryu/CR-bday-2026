@@ -30,6 +30,22 @@
   --menu-top: 432px;
   --menu-button-height: 76px;
   --menu-gap: 18px;
+  --button-font-size: 18px;
+  --button-letter-spacing: 0.08em;
+
+  --loading-box-width: 560px;
+  --loading-box-padding: 28px 32px 30px;
+  --loading-art-width: 420px;
+  --loading-list-width: 420px;
+  --loading-list-gap: 12px;
+  --loading-message-size: 14px;
+
+  --page-card-width: 560px;
+  --page-card-padding: 36px;
+  --page-kicker-size: 12px;
+  --page-section-size: 12px;
+  --page-title-size: 28px;
+  --page-copy-size: 13px;
 
   --font-pixel: "Press Start 2P", "DungGeunMo", "VT323", monospace;
 }
@@ -58,6 +74,39 @@ body:not(.is-scene-ready) .scene-shell {
   width: calc(var(--scene-width) * var(--scene-scale));
   height: calc(var(--scene-height) * var(--scene-scale));
   flex: 0 0 auto;
+}
+
+body.is-portrait-scene {
+  --viewport-pad: 12px;
+  --scene-width: 540px;
+  --scene-height: 960px;
+
+  --frame-gap: 14px;
+  --frame-thick: 7px;
+  --frame-inner-gap: 10px;
+
+  --header-width: 270px;
+  --header-top: 176px;
+  --menu-width: 300px;
+  --menu-top: 296px;
+  --menu-button-height: 80px;
+  --menu-gap: 16px;
+  --button-font-size: 20px;
+  --button-letter-spacing: 0.04em;
+
+  --loading-box-width: 400px;
+  --loading-box-padding: 28px 28px 30px;
+  --loading-art-width: 280px;
+  --loading-list-width: 300px;
+  --loading-list-gap: 12px;
+  --loading-message-size: 14px;
+
+  --page-card-width: 400px;
+  --page-card-padding: 28px;
+  --page-kicker-size: 12px;
+  --page-section-size: 12px;
+  --page-title-size: 24px;
+  --page-copy-size: 14px;
 }
 
 .site-bg {
@@ -107,8 +156,8 @@ body:not(.is-scene-ready) .scene-shell {
     0 0 0 8px var(--line-mid);
   overflow: hidden;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 18px;
+  letter-spacing: var(--button-letter-spacing);
+  font-size: var(--button-font-size);
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--line-dark);
   transition: transform 0.08s ease, filter 0.08s ease, background-color 0.08s ease;
