@@ -96,7 +96,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(18px, 3vh, 30px);
+  gap: clamp(8px, 1.6vh, 18px);
   padding:
     0
     clamp(18px, 4vw, 28px)
@@ -107,8 +107,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: clamp(-26px, -3vh, -10px);
-  margin-bottom: clamp(8px, 1.5vh, 18px);
+  margin-top: clamp(-36px, -4vh, -14px);
+  margin-bottom: clamp(-132px, -14vh, -84px);
 }
 
 .site-header-image {
@@ -129,12 +129,12 @@
 
 @media (min-width: 768px) {
   .home-stage {
-    gap: 24px;
+    gap: 14px;
   }
 
   .home-header {
-    margin-top: -42px;
-    margin-bottom: 10px;
+    margin-top: -56px;
+    margin-bottom: -176px;
   }
 
   .home-menu {
