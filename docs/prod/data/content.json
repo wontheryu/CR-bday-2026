@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "title": "생일카페",
+    "siteName": "생일카페"
+  },
+  "home": {
+    "headerAlt": "생일카페 메인 헤더",
+    "menuButtons": [
+      {
+        "label": "ABOUT",
+        "link": "#"
+      },
+      {
+        "label": "NOTICE",
+        "link": "#"
+      },
+      {
+        "label": "LOCATION",
+        "link": "#"
+      }
+    ]
+  }
+}

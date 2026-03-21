@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>생일카페</title>
+
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/theme.css" />
+  <link rel="stylesheet" href="./assets/css/layout.css" />
+  <link rel="stylesheet" href="./assets/css/components.css" />
+  <link rel="stylesheet" href="./assets/css/pages.css" />
+</head>
+<body>
+  <div class="site-bg"></div>
+
+  <div class="app-frame">
+    <div class="frame-layer frame-layer-outer"></div>
+    <div class="frame-layer frame-layer-inner"></div>
+
+    <main class="screen">
+      <section
+        id="loading-screen"
+        class="screen-panel loading-screen is-active"
+        aria-live="polite"
+      >
+        <div class="loading-box pixel-panel">
+          <p class="loading-title">LOADING...</p>
+          <div class="loading-bar">
+            <div id="loading-bar-fill" class="loading-bar-fill"></div>
+          </div>
+          <p id="loading-text" class="loading-text">시스템 접속 중</p>
+        </div>
+      </section>
+
+      <section
+        id="home-screen"
+        class="screen-panel home-screen"
+        aria-hidden="true"
+      >
+        <header class="home-header">
+          <img
+            src="./assets/img/header.png"
+            alt="생일카페 헤더"
+            class="site-header-image"
+          />
+        </header>
+
+        <nav class="home-menu" aria-label="메인 메뉴">
+          <button class="pixel-button menu-button" type="button" data-link="#">
+            MENU 1
+          </button>
+          <button class="pixel-button menu-button" type="button" data-link="#">
+            MENU 2
+          </button>
+          <button class="pixel-button menu-button" type="button" data-link="#">
+            MENU 3
+          </button>
+        </nav>
+      </section>
+    </main>
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/loading.js"></script>
+</body>
+</html>

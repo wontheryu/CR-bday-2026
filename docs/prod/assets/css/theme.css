@@ -1,0 +1,93 @@
+:root {
+  --bg-color: #101010;
+  --panel-dark: #1a1a1a;
+  --panel-mid: #2d2d2d;
+  --panel-light: #d6d6d6;
+  --line-dark: #000000;
+  --line-mid: #5e5e5e;
+  --line-light: #f4f4f4;
+  --accent: #f7d94c;
+  --text-main: #f8f8f8;
+  --text-sub: #cfcfcf;
+
+  --frame-gap: clamp(12px, 2.4vw, 28px);
+  --frame-thick: clamp(6px, 1vw, 12px);
+  --frame-inner-gap: clamp(8px, 1.5vw, 18px);
+
+  --header-width: min(72vw, 420px);
+  --menu-width: min(78vw, 360px);
+  --menu-button-height: clamp(54px, 8vw, 68px);
+  --menu-gap: clamp(12px, 2vw, 18px);
+
+  --font-pixel: "Press Start 2P", "DungGeunMo", "VT323", monospace;
+}
+
+body {
+  font-family: var(--font-pixel);
+  color: var(--text-main);
+  background-color: var(--bg-color);
+  overflow: hidden;
+}
+
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url("../img/background.jpg");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  background-position: top left;
+}
+
+.site-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.45));
+  z-index: -1;
+}
+
+.pixel-panel {
+  background: var(--panel-dark);
+  border: 4px solid var(--line-light);
+  box-shadow:
+    0 0 0 4px var(--line-dark),
+    0 0 0 8px var(--line-mid);
+}
+
+.pixel-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--menu-button-height);
+  padding: 0 16px;
+  color: var(--text-main);
+  background: var(--panel-mid);
+  border: 4px solid var(--line-light);
+  box-shadow:
+    0 0 0 4px var(--line-dark),
+    0 0 0 8px var(--line-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: clamp(12px, 2.4vw, 16px);
+  transition: transform 0.08s ease, filter 0.08s ease;
+}
+
+.pixel-button:hover,
+.pixel-button:focus-visible {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.pixel-button:active {
+  transform: translateY(2px);
+  filter: brightness(0.95);
+}
+
+.pixel-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 8px;
+}

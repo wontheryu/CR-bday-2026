@@ -1,0 +1,43 @@
+.loading-box {
+  width: min(78vw, 420px);
+  padding: clamp(20px, 4vw, 32px);
+  text-align: center;
+}
+
+.loading-title {
+  font-size: clamp(14px, 3vw, 20px);
+  margin-bottom: 20px;
+  letter-spacing: 0.08em;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 28px;
+  background: #0a0a0a;
+  border: 3px solid var(--line-light);
+  box-shadow:
+    0 0 0 3px var(--line-dark);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.loading-bar-fill {
+  width: 0%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--accent) 0 14px,
+      #e0ba22 14px 28px
+    );
+}
+
+.loading-text {
+  font-size: clamp(10px, 2vw, 12px);
+  color: var(--text-sub);
+  min-height: 1.5em;
+}
+
+.menu-button {
+  user-select: none;
+}
