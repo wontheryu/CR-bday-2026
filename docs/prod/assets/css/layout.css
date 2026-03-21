@@ -96,7 +96,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(8px, 1.6vh, 18px);
+  gap: clamp(10px, 2vh, 20px);
   padding:
     0
     clamp(18px, 4vw, 28px)
@@ -105,17 +105,21 @@
 
 .home-header {
   width: 100%;
+  height: clamp(170px, 21vw, 230px);
   display: flex;
   justify-content: center;
-  margin-top: clamp(-36px, -4vh, -14px);
-  margin-bottom: clamp(-132px, -14vh, -84px);
+  align-items: flex-start;
+  overflow: hidden;
+  margin-top: clamp(-24px, -3vh, -8px);
+  margin-bottom: clamp(-28px, -4vh, -10px);
 }
 
 .site-header-image {
-  width: calc(var(--header-width) * 1.62);
-  max-width: min(94%, 760px);
+  width: calc(var(--header-width) * 1.68);
+  max-width: min(96%, 780px);
   height: auto;
   image-rendering: pixelated;
+  transform: translateY(-4px);
 }
 
 .home-menu {
@@ -129,12 +133,13 @@
 
 @media (min-width: 768px) {
   .home-stage {
-    gap: 14px;
+    gap: 12px;
   }
 
   .home-header {
-    margin-top: -56px;
-    margin-bottom: -176px;
+    height: clamp(196px, 19vw, 244px);
+    margin-top: -34px;
+    margin-bottom: -42px;
   }
 
   .home-menu {

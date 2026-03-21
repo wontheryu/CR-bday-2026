@@ -21,10 +21,10 @@
 
 .loading-message-item {
   position: relative;
-  padding-left: 18px;
+  padding-left: 22px;
   color: var(--text-dim);
-  font-size: clamp(10px, 1.8vw, 12px);
-  line-height: 1.8;
+  font-size: clamp(12px, 2.1vw, 15px);
+  line-height: 1.9;
   letter-spacing: 0.04em;
 }
 
@@ -33,8 +33,8 @@
   position: absolute;
   top: 0.75em;
   left: 0;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   background: var(--line-mid);
   transform: translateY(-50%);
 }
