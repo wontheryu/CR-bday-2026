@@ -1,0 +1,75 @@
+:root {
+  --bg-deep: #0b1020;
+  --bg-grid: #162247;
+  --panel-dark: #161d37;
+  --panel-mid: #23305d;
+  --panel-soft: rgba(13, 19, 41, 0.78);
+  --line-dark: #000000;
+  --line-mid: #44537e;
+  --line-light: #f6f7ff;
+  --accent: #f4c95f;
+  --accent-strong: #d89c1d;
+  --text-main: #f7f8ff;
+  --text-sub: #bfc9ec;
+  --text-dim: #8190bd;
+
+  --font-pixel: "Press Start 2P", "DungGeunMo", "VT323", monospace;
+  --font-body: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+
+  --viewport-pad: 12px;
+  --scene-width: 390px;
+  --scene-height: 844px;
+  --scene-scale: 1;
+
+  --frame-gap: 14px;
+  --frame-thick: 4px;
+  --frame-inner-gap: 10px;
+
+  --home-logo-width: 212px;
+  --party-width: 312px;
+  --party-character-width: 72px;
+  --menu-width: 204px;
+  --menu-height: 58px;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at top, rgba(59, 80, 150, 0.18), transparent 44%),
+    var(--bg-deep);
+  color: var(--text-main);
+  font-family: var(--font-pixel);
+  overflow: hidden;
+}
+
+body:not(.is-scene-ready) .scene-shell {
+  visibility: hidden;
+}
+
+.viewport-shell {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: var(--viewport-pad);
+}
+
+.scene-shell {
+  position: relative;
+  width: calc(var(--scene-width) * var(--scene-scale));
+  height: calc(var(--scene-height) * var(--scene-scale));
+  flex: 0 0 auto;
+}
+
+.app-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--scene-width);
+  height: var(--scene-height);
+  transform: scale(var(--scene-scale));
+  transform-origin: top left;
+  overflow: hidden;
+  isolation: isolate;
+}

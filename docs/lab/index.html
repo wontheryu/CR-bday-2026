@@ -1,58 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CR-bday-2026 · LAB</title>
-  <meta name="description" content="CR-bday-2026 반응형(모바일/태블릿/PC) 레이아웃 실험실" />
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>CR-bday-2026 LAB</title>
+  <meta
+    name="description"
+    content="2026 이채령 생일카페 게임 UI 실험용 랩."
+  />
 
-  <link rel="stylesheet" href="./style.css?v=20260307_1628" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/theme.css" />
+  <link rel="stylesheet" href="./assets/css/app.css" />
 </head>
 <body>
-  <div id="splash" class="splash" aria-label="인트로 화면">
-    <div class="splash__inner">
-      <img
-        id="loadGif"
-        class="splash__img"
-        src="./assets/load-bit.gif"
-        alt="Loading"
-        width="2000"
-        height="2000"
-        decoding="async"
-      />
+  <div class="viewport-shell">
+    <div class="scene-shell">
+      <div class="app-frame">
+        <div class="scene-bg"></div>
+        <div class="frame-layer frame-layer-outer"></div>
+        <div class="frame-layer frame-layer-inner"></div>
+
+        <main class="screen">
+          <section
+            id="loading-screen"
+            class="screen-panel loading-screen is-active"
+            aria-live="polite"
+          >
+            <div class="loading-stage">
+              <img
+                id="loading-art"
+                class="loading-art"
+                src="./assets/anim/loading.gif"
+                alt="로딩 애니메이션"
+                width="2000"
+                height="2000"
+                decoding="async"
+              />
+            </div>
+          </section>
+
+          <section
+            id="home-screen"
+            class="screen-panel home-screen"
+            aria-hidden="true"
+          >
+            <div class="home-stage">
+              <div class="home-stage__header">
+                <img
+                  class="home-logo"
+                  src="./assets/img/ui/loading-logo.png"
+                  alt="로딩 605 로고"
+                  width="142"
+                  height="73"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="home-stage__party" aria-label="캐릭터 4명">
+                <img
+                  class="party-character"
+                  src="./assets/img/characters/char-1.png"
+                  alt="캐릭터 1"
+                  width="204"
+                  height="204"
+                  decoding="async"
+                />
+                <img
+                  class="party-character"
+                  src="./assets/img/characters/char-2.png"
+                  alt="캐릭터 2"
+                  width="204"
+                  height="204"
+                  decoding="async"
+                />
+                <img
+                  class="party-character"
+                  src="./assets/img/characters/char-3.png"
+                  alt="캐릭터 3"
+                  width="204"
+                  height="204"
+                  decoding="async"
+                />
+                <img
+                  class="party-character"
+                  src="./assets/img/characters/char-4.png"
+                  alt="캐릭터 4"
+                  width="204"
+                  height="204"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="home-stage__status">
+                <p class="status-caption" data-home-caption></p>
+                <p class="status-copy" data-home-copy></p>
+              </div>
+
+              <nav class="menu-list" aria-label="메인 메뉴" data-home-menu></nav>
+
+              <div class="home-stage__footer">
+                <p class="footer-chip">LAB BUILD</p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
     </div>
   </div>
 
-  <div id="afterLoad" class="afterload" aria-label="헤더 데모">
-    <div class="hero-header" aria-label="로딩 605 퍼센트 스타일의 레트로 헤더 프레임">
-      <div class="hero-header__lang" aria-label="언어 선택">
-        <button type="button" class="hero-header__lang-btn is-active" aria-pressed="true">KO</button>
-        <span class="hero-header__lang-divider" aria-hidden="true">|</span>
-        <button type="button" class="hero-header__lang-btn" aria-pressed="false">EN</button>
-      </div>
-
-      <div class="hero-header__image-wrap">
-        <img
-          class="hero-header__image"
-          src="./assets/header.png"
-          alt="LOADING 605 퍼센트 헤더"
-          width="204"
-          height="204"
-          decoding="async"
-        />
-      </div>
-
-      <div class="hero-characters" role="group" aria-label="캐릭터 4명">
-        <img class="hero-characters__img" src="./assets/char-1.png" alt="Character 1" width="204" height="204" decoding="async" />
-        <img class="hero-characters__img" src="./assets/char-2.png" alt="Character 2" width="204" height="204" decoding="async" />
-        <img class="hero-characters__img" src="./assets/char-3.png" alt="Character 3" width="204" height="204" decoding="async" />
-        <img class="hero-characters__img" src="./assets/char-4.png" alt="Character 4" width="204" height="204" decoding="async" />
-      </div>
-
-      <div class="hero-header__frame" aria-hidden="true"></div>
-    </div>
-  </div>
-
-  <script src="./app.js?v=20260307_1628" defer></script>
+  <script src="./assets/js/content.js"></script>
+  <script src="./assets/js/scene.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/loading.js"></script>
 </body>
 </html>
