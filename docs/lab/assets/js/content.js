@@ -16,22 +16,19 @@ window.LAB_CONTENT = {
         id: "notice",
         label: "NOTICE",
         href: "./pages/notice.html",
-        disabled: false,
-        summary: "공지, 굿즈, 특전, 럭키드로우 구조"
+        disabled: false
       },
       {
         id: "wardrobe",
         label: "WARDROBE",
         href: "./pages/wardrobe.html",
-        disabled: false,
-        summary: "채령이 의상/캐릭터 감상 페이지"
+        disabled: false
       },
       {
         id: "service",
         label: "SERVICE",
         href: "./pages/service.html",
-        disabled: false,
-        summary: "인스타그램과 외부 링크 허브"
+        disabled: false
       }
     ]
   }
