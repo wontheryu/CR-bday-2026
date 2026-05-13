@@ -8,6 +8,8 @@
     max(20px, calc(env(safe-area-inset-bottom) + 12px));
   scrollbar-width: none;
   overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 .page-screen::before {
@@ -29,7 +31,7 @@
   z-index: 1;
   width: min(100%, var(--detail-max-width));
   display: grid;
-  gap: 16px;
+  gap: 20px;
   align-content: start;
   margin: 0 auto;
   min-width: 0;
@@ -72,7 +74,7 @@
 .page-title-block {
   display: grid;
   gap: 10px;
-  padding: 16px 16px 18px;
+  padding: 18px 18px 20px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 24%),
     linear-gradient(180deg, rgba(244, 201, 95, 0.1), transparent 52%),
@@ -112,8 +114,8 @@
 
 .page-panel {
   display: grid;
-  gap: 12px;
-  padding: 16px;
+  gap: 14px;
+  padding: 18px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 18%),
     rgba(12, 18, 37, 0.92);
@@ -177,7 +179,7 @@
 
 .notice-list {
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .notice-item {
@@ -216,7 +218,7 @@
 .wardrobe-thumbs,
 .stats-grid {
   display: grid;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
 }
 
@@ -332,7 +334,7 @@
 
 .info-stack {
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .info-row {
