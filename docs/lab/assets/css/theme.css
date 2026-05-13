@@ -16,20 +16,24 @@
   --font-pixel: "Press Start 2P", "DungGeunMo", "VT323", monospace;
   --font-body: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 
-  --viewport-pad: 12px;
-  --scene-width: 390px;
-  --scene-height: 844px;
+  --viewport-pad: 0px;
+  --scene-width: 100vw;
+  --scene-height: 100svh;
   --scene-scale: 1;
 
-  --frame-gap: 16px;
-  --frame-thick: 6px;
-  --frame-inner-gap: 16px;
+  --frame-gap: clamp(8px, 2vw, 18px);
+  --frame-thick: clamp(4px, 0.8vw, 6px);
+  --frame-inner-gap: clamp(10px, 2.2vw, 18px);
 
-  --home-logo-width: 266px;
-  --party-width: 334px;
-  --party-character-width: 82px;
-  --menu-width: 232px;
-  --menu-height: 66px;
+  --home-logo-width: clamp(250px, 60vw, 360px);
+  --party-width: clamp(300px, 80vw, 388px);
+  --party-character-width: clamp(68px, 18vw, 92px);
+  --menu-width: clamp(260px, 74vw, 360px);
+  --menu-height: clamp(68px, 10vw, 84px);
+  --meter-width: clamp(240px, 68vw, 360px);
+  --links-width: clamp(300px, 86vw, 420px);
+  --stage-max-width: 430px;
+  --detail-max-width: 456px;
 }
 
 body {
@@ -46,28 +50,41 @@ body:not(.is-scene-ready) .scene-shell {
 }
 
 .viewport-shell {
+  width: 100%;
   min-height: 100vh;
   min-height: 100svh;
-  display: grid;
-  place-items: center;
-  padding: var(--viewport-pad);
+  padding: 0;
 }
 
 .scene-shell {
   position: relative;
-  width: calc(var(--scene-width) * var(--scene-scale));
-  height: calc(var(--scene-height) * var(--scene-scale));
-  flex: 0 0 auto;
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100svh;
+  height: 100dvh;
 }
 
 .app-frame {
   position: absolute;
   top: 0;
   left: 0;
-  width: var(--scene-width);
-  height: var(--scene-height);
-  transform: scale(var(--scene-scale));
-  transform-origin: top left;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   isolation: isolate;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --home-logo-width: clamp(320px, 34vw, 430px);
+    --party-width: clamp(360px, 44vw, 480px);
+    --party-character-width: clamp(78px, 10vw, 104px);
+    --menu-width: clamp(320px, 34vw, 420px);
+    --menu-height: clamp(74px, 7vw, 92px);
+    --meter-width: clamp(300px, 32vw, 420px);
+    --links-width: clamp(340px, 42vw, 520px);
+    --stage-max-width: 520px;
+    --detail-max-width: 560px;
+  }
 }

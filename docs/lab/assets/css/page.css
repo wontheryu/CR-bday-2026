@@ -1,9 +1,23 @@
 .page-screen {
+  position: relative;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 28px 20px 26px;
+  padding:
+    max(18px, calc(env(safe-area-inset-top) + 10px))
+    clamp(14px, 3.8vw, 22px)
+    max(20px, calc(env(safe-area-inset-bottom) + 12px));
   scrollbar-width: none;
   overscroll-behavior: contain;
+}
+
+.page-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 11, 20, 0.36), rgba(8, 11, 20, 0.1) 18%, rgba(8, 11, 20, 0.28)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 24%);
+  pointer-events: none;
 }
 
 .page-screen::-webkit-scrollbar {
@@ -11,10 +25,13 @@
 }
 
 .page-shell {
-  width: 100%;
+  position: relative;
+  z-index: 1;
+  width: min(100%, var(--detail-max-width));
   display: grid;
   gap: 16px;
   align-content: start;
+  margin: 0 auto;
   min-width: 0;
 }
 
@@ -30,13 +47,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 34px;
+  min-height: 36px;
+  min-width: 88px;
   padding: 0 12px;
-  border: 2px solid var(--line-light);
-  background: rgba(18, 25, 49, 0.78);
+  border: 3px solid var(--line-light);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 30%),
+    rgba(18, 25, 49, 0.9);
   box-shadow:
-    0 0 0 2px var(--line-dark),
-    4px 4px 0 rgba(0, 0, 0, 0.56);
+    0 0 0 3px var(--line-dark),
+    6px 6px 0 rgba(0, 0, 0, 0.56);
   color: var(--text-main);
   font-size: 10px;
   letter-spacing: 0.06em;
@@ -45,12 +65,22 @@
 }
 
 .top-action {
+  min-width: 118px;
   color: var(--accent);
 }
 
 .page-title-block {
   display: grid;
   gap: 10px;
+  padding: 16px 16px 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 24%),
+    linear-gradient(180deg, rgba(244, 201, 95, 0.1), transparent 52%),
+    rgba(13, 19, 40, 0.88);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 0 0 2px rgba(0, 0, 0, 0.84),
+    0 10px 24px rgba(0, 0, 0, 0.24);
   min-width: 0;
 }
 
@@ -63,9 +93,9 @@
 
 .page-title {
   font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 800;
-  line-height: 1.45;
+  line-height: 1.38;
   letter-spacing: -0.03em;
   word-break: keep-all;
   overflow-wrap: anywhere;
@@ -75,7 +105,7 @@
   color: var(--text-sub);
   font-family: var(--font-body);
   font-size: 11px;
-  line-height: 1.75;
+  line-height: 1.68;
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
@@ -85,19 +115,19 @@
   gap: 12px;
   padding: 16px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 20%),
-    var(--panel-soft);
-  border: 2px solid rgba(255, 255, 255, 0.24);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 18%),
+    rgba(12, 18, 37, 0.92);
+  border: 2px solid rgba(255, 255, 255, 0.22);
   box-shadow:
     0 0 0 2px rgba(0, 0, 0, 0.85),
-    0 10px 24px rgba(0, 0, 0, 0.28);
+    0 10px 24px rgba(0, 0, 0, 0.3);
   min-width: 0;
 }
 
 .page-panel--accent {
   background:
-    linear-gradient(180deg, rgba(244, 201, 95, 0.16), transparent 32%),
-    rgba(19, 26, 50, 0.92);
+    linear-gradient(180deg, rgba(244, 201, 95, 0.18), transparent 28%),
+    rgba(17, 24, 48, 0.95);
 }
 
 .panel-kicker {
@@ -154,8 +184,9 @@
   display: grid;
   gap: 6px;
   padding: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(18, 25, 49, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
 .notice-item__title,
@@ -199,8 +230,9 @@
   display: grid;
   gap: 8px;
   padding: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(18, 25, 49, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
   min-width: 0;
 }
 
@@ -244,8 +276,9 @@
   padding: 16px;
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 40%),
-    rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    rgba(15, 22, 45, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
 .wardrobe-stage__character {
@@ -268,8 +301,9 @@
   display: grid;
   gap: 8px;
   padding: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(18, 25, 49, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
   min-width: 0;
 }
 
@@ -305,8 +339,9 @@
   display: grid;
   gap: 6px;
   padding: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(18, 25, 49, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
   min-width: 0;
 }
 
@@ -343,8 +378,9 @@
   padding: 16px;
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.06), transparent 42%),
-    rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    rgba(18, 25, 49, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
 .visual-slot__label {
@@ -359,7 +395,7 @@
   display: grid;
   place-items: center;
   padding: 14px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(18, 25, 49, 0.9);
   border: 1px dashed rgba(255, 255, 255, 0.18);
 }
 
@@ -378,8 +414,8 @@
 
 .tag-list__item {
   padding: 10px 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(18, 25, 49, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--text-main);
   font-family: var(--font-body);
   font-size: 11px;
