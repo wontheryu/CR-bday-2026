@@ -30,13 +30,22 @@ function renderMenu(content) {
     const link = document.createElement("a");
     const isDisabled = Boolean(item?.disabled);
     const isWideLabel = (item?.label || "").length > 8;
+    const leftDeco = document.createElement("span");
+    const label = document.createElement("span");
+    const rightDeco = document.createElement("span");
 
     link.className = "menu-button";
     if (isWideLabel) {
       link.classList.add("menu-button--wide");
     }
 
-    link.textContent = item?.label || `MENU ${index + 1}`;
+    leftDeco.className = "menu-button__deco menu-button__deco--left";
+    leftDeco.setAttribute("aria-hidden", "true");
+    label.className = "menu-button__label";
+    label.textContent = item?.label || `MENU ${index + 1}`;
+    rightDeco.className = "menu-button__deco menu-button__deco--right";
+    rightDeco.setAttribute("aria-hidden", "true");
+    link.append(leftDeco, label, rightDeco);
 
     if (isDisabled) {
       link.href = "#";
@@ -62,12 +71,21 @@ function renderOfficialLinks(content) {
 
   items.forEach((item) => {
     const link = document.createElement("a");
+    const badge = document.createElement("span");
+    const title = document.createElement("span");
+    const detail = document.createElement("span");
 
     link.className = "support-link";
     link.href = item?.href || "#";
     link.target = "_blank";
     link.rel = "noreferrer noopener";
-    link.textContent = item?.label || "LINK";
+    badge.className = "support-link__badge";
+    badge.textContent = item?.badge || "GO";
+    title.className = "support-link__title";
+    title.textContent = item?.label || "LINK";
+    detail.className = "support-link__detail";
+    detail.textContent = item?.detail || "OPEN";
+    link.append(badge, title, detail);
     linkGrid.appendChild(link);
   });
 }

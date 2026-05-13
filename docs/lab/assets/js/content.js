@@ -32,17 +32,23 @@ window.LAB_CONTENT = {
     officialLinks: [
       {
         id: "itzy-youtube",
-        label: "ITZY YT",
+        label: "ITZY",
+        detail: "YOUTUBE",
+        badge: "YT",
         href: "https://www.youtube.com/@ITZY"
       },
       {
         id: "itzy-instagram",
-        label: "ITZY IG",
+        label: "ITZY",
+        detail: "INSTAGRAM",
+        badge: "IG",
         href: "https://www.instagram.com/itzy.all.in.us/"
       },
       {
         id: "chaeryeong-instagram",
-        label: "CR IG",
+        label: "CHAERYEONG",
+        detail: "INSTAGRAM",
+        badge: "CR",
         href: "https://www.instagram.com/chaerrry0/"
       }
     ]
