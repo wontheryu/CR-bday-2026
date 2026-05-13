@@ -39,7 +39,7 @@ body {
     radial-gradient(circle at top, rgba(59, 80, 150, 0.18), transparent 44%),
     var(--bg-deep);
   color: var(--text-main);
-  font-family: var(--font-pixel);
+  font-family: var(--font-body);
   overflow: hidden;
 }
 
