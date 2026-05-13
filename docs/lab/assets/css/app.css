@@ -167,10 +167,11 @@
     0 0 0 3px var(--line-dark),
     8px 8px 0 rgba(0, 0, 0, 0.72);
   font-family: var(--font-pixel);
-  font-size: 18px;
-  letter-spacing: 0.04em;
+  font-size: 15px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   transition: transform 120ms ease, filter 120ms ease;
+  white-space: nowrap;
 }
 
 .menu-button:hover,
@@ -196,6 +197,33 @@
   color: rgba(255, 255, 255, 0.86);
   text-shadow: 2px 2px 0 rgba(70, 52, 16, 0.72);
   filter: saturate(0.68);
+}
+
+.home-stage__helper {
+  width: min(100%, 292px);
+  margin-top: 24px;
+  display: grid;
+  gap: 8px;
+}
+
+.helper-row {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  background: rgba(11, 16, 32, 0.54);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.helper-row__title {
+  color: var(--accent);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+.helper-row__copy {
+  color: var(--text-sub);
+  font-size: 8px;
+  line-height: 1.7;
 }
 
 .home-stage__footer {

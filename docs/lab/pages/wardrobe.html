@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>WARDROBE | CR-bday-2026 LAB</title>
+  <link rel="stylesheet" href="../assets/css/reset.css" />
+  <link rel="stylesheet" href="../assets/css/theme.css" />
+  <link rel="stylesheet" href="../assets/css/app.css" />
+  <link rel="stylesheet" href="../assets/css/page.css" />
+</head>
+<body>
+  <div class="viewport-shell">
+    <div class="scene-shell">
+      <div class="app-frame">
+        <div class="scene-bg"></div>
+        <div class="frame-layer frame-layer-outer"></div>
+        <div class="frame-layer frame-layer-inner"></div>
+
+        <main class="screen">
+          <section class="screen-panel page-screen is-active" aria-live="polite">
+            <div class="page-shell">
+              <div class="page-topbar">
+                <a class="back-link" href="../index.html">BACK</a>
+                <span class="top-action">WARDROBE</span>
+              </div>
+
+              <div class="page-title-block">
+                <p class="page-kicker">DRESS ROOM</p>
+                <h1 class="page-title">채령이 의상과 캐릭터 구경 페이지</h1>
+                <p class="page-lead">
+                  나중에 메인 일러스트나 의상컷이 들어오면, 지금 잡아둔 슬롯에 그대로 교체하는 구조로 설계했다.
+                </p>
+              </div>
+
+              <article class="page-panel wardrobe-hero">
+                <div class="wardrobe-stage">
+                  <img
+                    class="wardrobe-stage__character"
+                    src="../assets/img/characters/char-2.png"
+                    alt="대표 캐릭터"
+                    width="204"
+                    height="204"
+                    decoding="async"
+                  />
+                </div>
+
+                <div class="wardrobe-note">
+                  <p class="panel-kicker">MAIN LOOK</p>
+                  <h2 class="wardrobe-note__title">대표 캐릭터 또는 메인 의상 아트를 크게 노출</h2>
+                  <p class="wardrobe-note__copy">
+                    현재는 기존 캐릭터 스프라이트를 키워서 넣었고, 최종 단계에서는 세로형 큰 PNG나 일러스트로 교체하면 된다.
+                  </p>
+                </div>
+
+                <div class="wardrobe-tags">
+                  <span class="chip">OUTFIT NAME</span>
+                  <span class="chip">COLOR STORY</span>
+                  <span class="chip">PHOTO CUT</span>
+                </div>
+              </article>
+
+              <article class="page-panel">
+                <p class="panel-kicker">COLLECTION</p>
+                <h2 class="panel-title">캐릭터/의상 선택 슬롯</h2>
+                <div class="wardrobe-thumbs">
+                  <div class="thumb-card">
+                    <img class="thumb-card__img" src="../assets/img/characters/char-1.png" alt="룩 1" width="204" height="204" decoding="async" />
+                    <p class="thumb-card__name">LOOK 01</p>
+                    <p class="thumb-card__desc">추후 이 슬롯에 실제 의상 썸네일과 짧은 설명이 들어간다.</p>
+                  </div>
+                  <div class="thumb-card">
+                    <img class="thumb-card__img" src="../assets/img/characters/char-2.png" alt="룩 2" width="204" height="204" decoding="async" />
+                    <p class="thumb-card__name">LOOK 02</p>
+                    <p class="thumb-card__desc">탭 대신 카드 선택 방식으로도 충분히 게임 느낌을 낼 수 있다.</p>
+                  </div>
+                  <div class="thumb-card">
+                    <img class="thumb-card__img" src="../assets/img/characters/char-3.png" alt="룩 3" width="204" height="204" decoding="async" />
+                    <p class="thumb-card__name">LOOK 03</p>
+                    <p class="thumb-card__desc">스프라이트나 일러스트, 폴라로이드 컷으로 확장 가능하다.</p>
+                  </div>
+                  <div class="thumb-card">
+                    <img class="thumb-card__img" src="../assets/img/characters/char-4.png" alt="룩 4" width="204" height="204" decoding="async" />
+                    <p class="thumb-card__name">LOOK 04</p>
+                    <p class="thumb-card__desc">최종적으로는 캐릭터별 설명 문구와 확대 뷰를 붙이면 된다.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="page-panel">
+                <p class="panel-kicker">CHARACTER DATA</p>
+                <h2 class="panel-title">하단에는 상태창 스타일 메타 정보</h2>
+                <div class="stats-grid">
+                  <div class="stat-card">
+                    <p class="stat-label">MOOD</p>
+                    <p class="stat-value">SOFT</p>
+                  </div>
+                  <div class="stat-card">
+                    <p class="stat-label">LOOK</p>
+                    <p class="stat-value">CASUAL</p>
+                  </div>
+                  <div class="stat-card">
+                    <p class="stat-label">PHOTO</p>
+                    <p class="stat-value">4 CUTS</p>
+                  </div>
+                  <div class="stat-card">
+                    <p class="stat-label">UPDATE</p>
+                    <p class="stat-value">SOON</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/scene.js"></script>
+</body>
+</html>

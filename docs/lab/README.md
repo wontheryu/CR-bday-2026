@@ -5,9 +5,11 @@
 ## 현재 구조
 
 - `index.html`: 로딩 화면 -> 홈 화면 흐름을 확인하는 엔트리
+- `pages/*.html`: 홈 이후 3개 메뉴의 세미 디자인 페이지
 - `assets/css/reset.css`: 기본 리셋
 - `assets/css/theme.css`: 색상, 크기, 씬 토큰
 - `assets/css/app.css`: 로딩/홈 화면 스타일
+- `assets/css/page.css`: 서브 페이지 공통 레이아웃
 - `assets/js/content.js`: 메뉴/문구 데이터
 - `assets/js/scene.js`: 고정 세로 씬을 화면에 맞춰 스케일
 - `assets/js/loading.js`: 로딩 애니메이션 재생 및 전환
@@ -27,3 +29,4 @@
 - 최종 로딩 애니메이션 원본
 - 최종 홈 화면 로고/장식 프레임
 - 서브 페이지 UI 자산
+- 캐릭터 구경 페이지용 메인 일러스트

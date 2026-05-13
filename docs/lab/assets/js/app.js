@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   applyMeta(content);
   applyHomeCopy(content);
   renderMenu(content);
+  renderHelper(content);
 });
 
 function applyMeta(content) {
@@ -67,5 +68,31 @@ function renderMenu(content) {
     }
 
     menu.appendChild(link);
+  });
+}
+
+function renderHelper(content) {
+  const helper = document.querySelector("[data-home-helper]");
+  const items = content?.home?.menuButtons || [];
+
+  if (!helper) return;
+
+  helper.innerHTML = "";
+
+  items.forEach((item, index) => {
+    const row = document.createElement("div");
+    const title = document.createElement("p");
+    const copy = document.createElement("p");
+
+    row.className = "helper-row";
+    title.className = "helper-row__title";
+    copy.className = "helper-row__copy";
+
+    title.textContent = `${index + 1}. ${item?.label || "MENU"}`;
+    copy.textContent = item?.summary || "설명 슬롯";
+
+    row.appendChild(title);
+    row.appendChild(copy);
+    helper.appendChild(row);
   });
 }
