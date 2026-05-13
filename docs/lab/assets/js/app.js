@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const content = window.LAB_CONTENT || {};
 
   applyMeta(content);
-  applyHomeCopy(content);
   renderMenu(content);
+  renderOfficialLinks(content);
 });
 
 function applyMeta(content) {
@@ -11,33 +11,10 @@ function applyMeta(content) {
     document.title = content.meta.title;
   }
 
-  if (content?.loading?.imageAlt) {
-    const loadingArt = document.getElementById("loading-art");
-    if (loadingArt) {
-      loadingArt.alt = content.loading.imageAlt;
-    }
-  }
-
   if (content?.home?.logoAlt) {
-    const homeLogo = document.querySelector(".home-logo");
-    if (homeLogo) {
+    document.querySelectorAll(".home-logo").forEach((homeLogo) => {
       homeLogo.alt = content.home.logoAlt;
-    }
-  }
-}
-
-function applyHomeCopy(content) {
-  const caption = document.querySelector("[data-home-caption]");
-  const copy = document.querySelector("[data-home-copy]");
-
-  if (caption) {
-    caption.textContent = content?.home?.caption || "8-BIT HEART PROTOTYPE";
-  }
-
-  if (copy) {
-    copy.textContent =
-      content?.home?.copy ||
-      "게임 UI 중심 홈 화면과 메뉴 구조를 확인하는 실험용 빌드.";
+    });
   }
 }
 
@@ -52,8 +29,13 @@ function renderMenu(content) {
   items.forEach((item, index) => {
     const link = document.createElement("a");
     const isDisabled = Boolean(item?.disabled);
+    const isWideLabel = (item?.label || "").length > 8;
 
     link.className = "menu-button";
+    if (isWideLabel) {
+      link.classList.add("menu-button--wide");
+    }
+
     link.textContent = item?.label || `MENU ${index + 1}`;
 
     if (isDisabled) {
@@ -67,5 +49,25 @@ function renderMenu(content) {
     }
 
     menu.appendChild(link);
+  });
+}
+
+function renderOfficialLinks(content) {
+  const linkGrid = document.querySelector("[data-home-links]");
+  const items = content?.home?.officialLinks || [];
+
+  if (!linkGrid) return;
+
+  linkGrid.innerHTML = "";
+
+  items.forEach((item) => {
+    const link = document.createElement("a");
+
+    link.className = "support-link";
+    link.href = item?.href || "#";
+    link.target = "_blank";
+    link.rel = "noreferrer noopener";
+    link.textContent = item?.label || "LINK";
+    linkGrid.appendChild(link);
   });
 }

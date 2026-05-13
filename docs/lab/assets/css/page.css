@@ -134,7 +134,6 @@
 
 .notice-item__title,
 .goods-card__title,
-.service-card__title,
 .wardrobe-note__title {
   font-size: 11px;
   line-height: 1.6;
@@ -142,7 +141,6 @@
 
 .notice-item__copy,
 .goods-card__copy,
-.service-card__copy,
 .wardrobe-note__copy {
   color: var(--text-sub);
   font-size: 9px;
@@ -150,7 +148,6 @@
 }
 
 .goods-grid,
-.service-grid,
 .wardrobe-thumbs,
 .stats-grid {
   display: grid;
@@ -158,13 +155,11 @@
 }
 
 .goods-grid,
-.service-grid,
 .stats-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .goods-card,
-.service-card,
 .stat-card {
   display: grid;
   gap: 8px;
@@ -174,7 +169,6 @@
 }
 
 .goods-card__meta,
-.service-card__meta,
 .stat-label,
 .wardrobe-tag {
   color: var(--accent);
@@ -243,21 +237,4 @@
   font-size: 8px;
   line-height: 1.7;
   text-align: center;
-}
-
-.service-icon {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border: 2px solid var(--line-light);
-  box-shadow:
-    0 0 0 2px var(--line-dark),
-    4px 4px 0 rgba(0, 0, 0, 0.48);
-  color: var(--accent);
-  font-size: 18px;
-}
-
-.service-card {
-  align-content: start;
 }

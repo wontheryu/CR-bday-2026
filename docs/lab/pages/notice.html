@@ -24,73 +24,73 @@
           <section class="screen-panel page-screen is-active" aria-live="polite">
             <div class="page-shell">
               <div class="page-topbar">
-                <a class="back-link" href="../index.html">BACK</a>
-                <span class="top-action">NOTICE / SHOP</span>
+                <a class="back-link" href="../index.html?skipLoading=1">BACK</a>
+                <span class="top-action">NOTICE</span>
               </div>
 
               <div class="page-title-block">
                 <p class="page-kicker">QUEST LOG</p>
-                <h1 class="page-title">방문 전 확인할 공지와 럭드 안내</h1>
+                <h1 class="page-title">방문 전 확인할 공지와 기본 방문 정보</h1>
                 <p class="page-lead">
-                  최종 이미지 자산이 들어오기 전, 공지와 굿즈 정보를 어떤 패널 구조로 보여줄지 확인하는 세미 디자인이다.
+                  첫 번째 레퍼런스보다 두 번째 레퍼런스에 가까운 정보 패널 구조를 기준으로, 운영정보와 기본 특전을 먼저 보여주는 페이지로 잡는 편이 맞다.
                 </p>
               </div>
 
               <article class="page-panel page-panel--accent">
                 <p class="panel-kicker">SAVE POINT</p>
-                <h2 class="panel-title">가장 중요한 공지는 상단 고정 배너로 처리</h2>
+                <h2 class="panel-title">운영 날짜와 장소는 가장 먼저 보이게 배치</h2>
                 <p class="panel-copy">
-                  운영시간, 현장 대기, 특전 소진, 결제수단 같은 핵심 정보는 홈에서 바로 이어지는 최상단 패널에 고정한다.
+                  두 번째 이미지처럼 카페 이름, 날짜, 운영시간, 변동 공지를 제일 먼저 보는 구조가 NOTICE에 더 적합하다.
                 </p>
                 <div class="inline-chips">
+                  <span class="chip">장소 슬롯</span>
                   <span class="chip">운영시간 슬롯</span>
-                  <span class="chip">대기 규칙 슬롯</span>
-                  <span class="chip">결제수단 슬롯</span>
+                  <span class="chip">변동 공지 슬롯</span>
                 </div>
               </article>
 
               <article class="page-panel">
-                <p class="panel-kicker">NOTICE BOARD</p>
-                <h2 class="panel-title">공지 문구는 퀘스트 로그처럼 세로 정리</h2>
+                <p class="panel-kicker">INFORM WINDOW</p>
+                <h2 class="panel-title">현장 규칙과 방문 안내는 윈도우 패널로 정리</h2>
                 <div class="notice-list">
                   <div class="notice-item">
                     <p class="notice-item__title">입장 방식과 대기 동선</p>
                     <p class="notice-item__copy">현장 줄 정리, 포토존 순서, 매장 이용 규칙이 여기에 들어간다.</p>
                   </div>
                   <div class="notice-item">
-                    <p class="notice-item__title">특전 조건과 소진 안내</p>
-                    <p class="notice-item__copy">컵홀더, 포카, 스티커 지급 기준과 소진 시 대체안이 들어간다.</p>
+                    <p class="notice-item__title">촬영 규칙과 카페 배려 문구</p>
+                    <p class="notice-item__copy">매장 내 동선, 촬영 매너, 혼잡 시 안내 문구를 이 패널에 배치한다.</p>
                   </div>
                   <div class="notice-item">
-                    <p class="notice-item__title">럭키드로우 참여 규칙</p>
-                    <p class="notice-item__copy">응모 방식, 1인 제한, 미수령 처리, 경품 공지가 들어간다.</p>
+                    <p class="notice-item__title">문의 채널과 해시태그</p>
+                    <p class="notice-item__copy">공지 업로드 채널, 문의 방식, 해시태그 문구를 이 아래쪽에 정리한다.</p>
                   </div>
                 </div>
               </article>
 
               <article class="page-panel">
-                <p class="panel-kicker">SHOP INVENTORY</p>
-                <h2 class="panel-title">굿즈는 상점 인벤토리 카드로 정리</h2>
+                <p class="panel-kicker">GIFT WINDOW</p>
+                <h2 class="panel-title">기본 특전과 선착 특전은 별도 패널로 분리</h2>
                 <div class="goods-grid">
                   <div class="goods-card">
-                    <p class="goods-card__meta">LIMIT 1</p>
-                    <p class="goods-card__title">컵홀더 / 특전 세트</p>
-                    <p class="goods-card__copy">가격, 수량, 제공 조건, 판매 시작 시간을 이 카드 안에 정리.</p>
+                    <p class="goods-card__meta">BASIC GIFT</p>
+                    <p class="goods-card__title">컵홀더 / 엽서 / 포카 기본 구성</p>
+                    <p class="goods-card__copy">두 번째 레퍼런스의 GIFT 창처럼 기본 제공 특전 구성을 먼저 보여준다.</p>
                   </div>
                   <div class="goods-card">
-                    <p class="goods-card__meta">LUCKY DRAW</p>
-                    <p class="goods-card__title">럭드 참여권</p>
-                    <p class="goods-card__copy">응모 조건과 횟수, 추첨 방식, 주의사항을 이 블록에 배치.</p>
+                    <p class="goods-card__meta">FIRST COME</p>
+                    <p class="goods-card__title">선착 특전 일자별 수량</p>
+                    <p class="goods-card__copy">05일/06일 선착 특전과 지급 기준, 소진 시 안내 문구를 정리한다.</p>
                   </div>
                   <div class="goods-card">
-                    <p class="goods-card__meta">SOLD OUT</p>
-                    <p class="goods-card__title">포토카드 랜덤팩</p>
-                    <p class="goods-card__copy">품절 배지와 재고 상태, 대체 공지를 테스트하기 위한 샘플 카드.</p>
+                    <p class="goods-card__meta">HASHTAG</p>
+                    <p class="goods-card__title">SNS 업로드용 해시태그</p>
+                    <p class="goods-card__copy">레퍼런스 오른쪽의 해시태그 블록처럼 해시태그 안내를 분리하는 편이 좋다.</p>
                   </div>
                   <div class="goods-card">
-                    <p class="goods-card__meta">BONUS</p>
-                    <p class="goods-card__title">현장 미션 보상</p>
-                    <p class="goods-card__copy">스탬프/미션 이벤트가 있으면 이 영역으로 분리해서 보여주면 된다.</p>
+                    <p class="goods-card__meta">MAP</p>
+                    <p class="goods-card__title">간단 위치/지도 슬롯</p>
+                    <p class="goods-card__copy">NOTICE 안에 작은 지도 또는 위치 요약을 넣고, 상세 지도는 별도 확장 가능하다.</p>
                   </div>
                 </div>
               </article>

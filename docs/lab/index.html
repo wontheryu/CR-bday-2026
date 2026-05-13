@@ -30,16 +30,59 @@
             class="screen-panel loading-screen is-active"
             aria-live="polite"
           >
-            <div class="loading-stage">
-              <img
-                id="loading-art"
-                class="loading-art"
-                src="./assets/anim/loading.gif"
-                alt="로딩 애니메이션"
-                width="2000"
-                height="2000"
-                decoding="async"
-              />
+            <div class="boot-stage">
+              <div class="boot-stage__header">
+                <img
+                  class="home-logo"
+                  src="./assets/img/ui/loading-logo.png"
+                  alt="로딩 605 로고"
+                  width="142"
+                  height="73"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="boot-stage__party" aria-label="캐릭터 4명">
+                <img
+                  class="party-character"
+                  src="./assets/img/characters/char-1.png"
+                  alt="캐릭터 1"
+                  width="204"
+                  height="204"
+                  decoding="async"
+                />
+                <img
+                  class="party-character"
+                  src="./assets/img/characters/char-2.png"
+                  alt="캐릭터 2"
+                  width="204"
+                  height="204"
+                  decoding="async"
+                />
+                <img
+                  class="party-character"
+                  src="./assets/img/characters/char-3.png"
+                  alt="캐릭터 3"
+                  width="204"
+                  height="204"
+                  decoding="async"
+                />
+                <img
+                  class="party-character"
+                  src="./assets/img/characters/char-4.png"
+                  alt="캐릭터 4"
+                  width="204"
+                  height="204"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="loading-meter">
+                <p class="loading-meter__label">Loading...</p>
+                <div class="loading-meter__frame" aria-hidden="true">
+                  <span class="loading-meter__track"></span>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -95,16 +138,19 @@
                 />
               </div>
 
-              <div class="home-stage__status">
-                <p class="status-caption" data-home-caption></p>
-                <p class="status-copy" data-home-copy></p>
+              <div class="loading-meter loading-meter--ambient">
+                <p class="loading-meter__label">Loading...</p>
+                <div class="loading-meter__frame" aria-hidden="true">
+                  <span class="loading-meter__track"></span>
+                </div>
               </div>
 
               <nav class="menu-list" aria-label="메인 메뉴" data-home-menu></nav>
 
-              <div class="home-stage__footer">
-                <p class="footer-chip">LAB BUILD</p>
-              </div>
+              <section class="home-stage__links" aria-label="공식 외부 링크">
+                <p class="home-stage__links-title">OFFICIAL LINK</p>
+                <div class="link-grid" data-home-links></div>
+              </section>
             </div>
           </section>
         </main>

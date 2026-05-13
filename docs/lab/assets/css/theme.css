@@ -18,18 +18,18 @@
 
   --viewport-pad: 12px;
   --scene-width: 390px;
-  --scene-height: 780px;
+  --scene-height: 792px;
   --scene-scale: 1;
 
-  --frame-gap: 14px;
-  --frame-thick: 4px;
-  --frame-inner-gap: 10px;
+  --frame-gap: 18px;
+  --frame-thick: 5px;
+  --frame-inner-gap: 14px;
 
-  --home-logo-width: 196px;
-  --party-width: 312px;
-  --party-character-width: 72px;
-  --menu-width: 204px;
-  --menu-height: 54px;
+  --home-logo-width: 198px;
+  --party-width: 292px;
+  --party-character-width: 66px;
+  --menu-width: 188px;
+  --menu-height: 52px;
 }
 
 body {
