@@ -80,7 +80,8 @@ function renderOfficialLinks(content) {
     link.target = "_blank";
     link.rel = "noreferrer noopener";
     badge.className = "support-link__badge";
-    badge.textContent = item?.badge || "GO";
+    badge.classList.add(`support-link__badge--${item?.icon || "default"}`);
+    badge.innerHTML = getSupportIconMarkup(item?.icon);
     title.className = "support-link__title";
     title.textContent = item?.label || "LINK";
     detail.className = "support-link__detail";
@@ -88,4 +89,26 @@ function renderOfficialLinks(content) {
     link.append(badge, title, detail);
     linkGrid.appendChild(link);
   });
+}
+
+function getSupportIconMarkup(icon) {
+  if (icon === "youtube") {
+    return `
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M22 12c0 3.1-.3 4.8-.7 5.8-.3.8-.9 1.4-1.7 1.7-1 .4-2.8.7-7.6.7s-6.6-.3-7.6-.7a2.7 2.7 0 0 1-1.7-1.7C2.3 16.8 2 15.1 2 12s.3-4.8.7-5.8c.3-.8.9-1.4 1.7-1.7C5.4 4.1 7.2 3.8 12 3.8s6.6.3 7.6.7c.8.3 1.4.9 1.7 1.7.4 1 .7 2.7.7 5.8Zm-12.2 3.9 6-3.9-6-3.9v7.8Z"/>
+      </svg>
+    `;
+  }
+
+  if (icon === "instagram") {
+    return `
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <rect x="4.2" y="4.2" width="15.6" height="15.6" rx="4"></rect>
+        <circle cx="12" cy="12" r="3.6"></circle>
+        <circle cx="17.1" cy="6.9" r="1"></circle>
+      </svg>
+    `;
+  }
+
+  return "GO";
 }

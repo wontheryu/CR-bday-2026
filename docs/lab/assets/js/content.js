@@ -34,21 +34,21 @@ window.LAB_CONTENT = {
         id: "itzy-youtube",
         label: "ITZY",
         detail: "YOUTUBE",
-        badge: "YT",
+        icon: "youtube",
         href: "https://www.youtube.com/@ITZY"
       },
       {
         id: "itzy-instagram",
         label: "ITZY",
         detail: "INSTAGRAM",
-        badge: "IG",
+        icon: "instagram",
         href: "https://www.instagram.com/itzy.all.in.us/"
       },
       {
         id: "chaeryeong-instagram",
         label: "CHAERYEONG",
         detail: "INSTAGRAM",
-        badge: "CR",
+        icon: "instagram",
         href: "https://www.instagram.com/chaerrry0/"
       }
     ]

@@ -21,13 +21,13 @@
   --scene-height: 844px;
   --scene-scale: 1;
 
-  --frame-gap: 18px;
-  --frame-thick: 5px;
-  --frame-inner-gap: 14px;
+  --frame-gap: 16px;
+  --frame-thick: 6px;
+  --frame-inner-gap: 16px;
 
-  --home-logo-width: 224px;
-  --party-width: 316px;
-  --party-character-width: 74px;
+  --home-logo-width: 266px;
+  --party-width: 334px;
+  --party-character-width: 82px;
   --menu-width: 232px;
   --menu-height: 66px;
 }
@@ -35,9 +35,7 @@
 body {
   min-height: 100vh;
   min-height: 100svh;
-  background:
-    radial-gradient(circle at top, rgba(59, 80, 150, 0.18), transparent 44%),
-    var(--bg-deep);
+  background: #000000;
   color: var(--text-main);
   font-family: var(--font-body);
   overflow: hidden;
