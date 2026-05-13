@@ -21,18 +21,18 @@
   --scene-height: 100svh;
   --scene-scale: 1;
 
-  --frame-gap: clamp(8px, 2vw, 18px);
-  --frame-thick: clamp(4px, 0.8vw, 6px);
-  --frame-inner-gap: clamp(10px, 2.2vw, 18px);
+  --frame-gap: 0px;
+  --frame-thick: 0px;
+  --frame-inner-gap: 0px;
 
-  --home-logo-width: clamp(250px, 60vw, 360px);
-  --party-width: clamp(300px, 80vw, 388px);
-  --party-character-width: clamp(68px, 18vw, 92px);
-  --menu-width: clamp(260px, 74vw, 360px);
-  --menu-height: clamp(68px, 10vw, 84px);
-  --meter-width: clamp(240px, 68vw, 360px);
-  --links-width: clamp(300px, 86vw, 420px);
-  --stage-max-width: 430px;
+  --home-logo-width: clamp(214px, 54vw, 320px);
+  --party-width: clamp(272px, 74vw, 360px);
+  --party-character-width: clamp(60px, 16vw, 82px);
+  --menu-width: clamp(232px, 68vw, 332px);
+  --menu-height: clamp(58px, 9vw, 74px);
+  --meter-width: clamp(220px, 62vw, 332px);
+  --links-width: clamp(252px, 78vw, 360px);
+  --stage-max-width: 400px;
   --detail-max-width: 456px;
 }
 
@@ -77,14 +77,14 @@ body:not(.is-scene-ready) .scene-shell {
 
 @media (min-width: 768px) {
   :root {
-    --home-logo-width: clamp(320px, 34vw, 430px);
-    --party-width: clamp(360px, 44vw, 480px);
-    --party-character-width: clamp(78px, 10vw, 104px);
-    --menu-width: clamp(320px, 34vw, 420px);
-    --menu-height: clamp(74px, 7vw, 92px);
-    --meter-width: clamp(300px, 32vw, 420px);
-    --links-width: clamp(340px, 42vw, 520px);
-    --stage-max-width: 520px;
+    --home-logo-width: clamp(300px, 30vw, 410px);
+    --party-width: clamp(330px, 40vw, 450px);
+    --party-character-width: clamp(72px, 9vw, 96px);
+    --menu-width: clamp(300px, 30vw, 396px);
+    --menu-height: clamp(66px, 6vw, 86px);
+    --meter-width: clamp(280px, 28vw, 390px);
+    --links-width: clamp(320px, 36vw, 480px);
+    --stage-max-width: 500px;
     --detail-max-width: 560px;
   }
 }
