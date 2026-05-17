@@ -1,3 +1,9 @@
+const BUTTON_ASSET_VERSION = "20260517-1634";
+
+function withAssetVersion(path) {
+  return `${path}?v=${BUTTON_ASSET_VERSION}`;
+}
+
 window.LAB_CONTENT = {
   meta: {
     title: "CR-bday-2026 LAB",
@@ -14,21 +20,21 @@ window.LAB_CONTENT = {
         id: "notice",
         label: "NOTICE",
         href: "./pages/notice.html",
-        imageSrc: "./assets/img/ui/buttons/btn_notice.png",
+        imageSrc: withAssetVersion("./assets/img/ui/buttons/btn_notice.png"),
         disabled: false
       },
       {
         id: "lucky-draw",
         label: "LUCKY DRAW",
         href: "./pages/lucky-draw.html",
-        imageSrc: "./assets/img/ui/buttons/btn_luckydraw.png",
+        imageSrc: withAssetVersion("./assets/img/ui/buttons/btn_luckydraw.png"),
         disabled: false
       },
       {
         id: "archive",
         label: "ARCHIVE",
         href: "./pages/wardrobe.html",
-        imageSrc: "./assets/img/ui/buttons/btn_archive.png",
+        imageSrc: withAssetVersion("./assets/img/ui/buttons/btn_archive.png"),
         disabled: false
       }
     ],
