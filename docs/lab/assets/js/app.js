@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const content = window.LAB_CONTENT || {};
 
   applyMeta(content);
+  renderParty(content);
   renderMenu(content);
   renderOfficialLinks(content);
 });
@@ -11,11 +12,37 @@ function applyMeta(content) {
     document.title = content.meta.title;
   }
 
-  if (content?.home?.logoAlt) {
-    document.querySelectorAll(".home-logo").forEach((homeLogo) => {
+  document.querySelectorAll("[data-home-logo]").forEach((homeLogo) => {
+    if (content?.home?.logoSrc) {
+      homeLogo.src = content.home.logoSrc;
+    }
+
+    if (content?.home?.logoAlt) {
       homeLogo.alt = content.home.logoAlt;
+    }
+  });
+}
+
+function renderParty(content) {
+  const groups = document.querySelectorAll("[data-party-group]");
+  const characters = content?.home?.partyCharacters || [];
+
+  if (!groups.length) return;
+
+  groups.forEach((group) => {
+    group.innerHTML = "";
+
+    characters.forEach((character, index) => {
+      const image = document.createElement("img");
+      image.className = "party-character";
+      image.src = character?.src || "";
+      image.alt = character?.alt || `캐릭터 ${index + 1}`;
+      image.width = 204;
+      image.height = 204;
+      image.decoding = "async";
+      group.appendChild(image);
     });
-  }
+  });
 }
 
 function renderMenu(content) {

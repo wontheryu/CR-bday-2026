@@ -19,7 +19,26 @@ window.LAB_CONTENT = {
     storageKey: "cr-bday-2026.lab.loading-seen"
   },
   home: {
+    logoSrc: "./assets/img/ui/loading-logo.png",
     logoAlt: "LOADING 605 로고",
+    partyCharacters: [
+      {
+        src: "./assets/img/characters/char-1.png",
+        alt: "캐릭터 1"
+      },
+      {
+        src: "./assets/img/characters/char-2.png",
+        alt: "캐릭터 2"
+      },
+      {
+        src: "./assets/img/characters/char-3.png",
+        alt: "캐릭터 3"
+      },
+      {
+        src: "./assets/img/characters/char-4.png",
+        alt: "캐릭터 4"
+      }
+    ],
     menuButtons: [
       {
         id: "notice",

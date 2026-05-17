@@ -45,10 +45,6 @@ body {
   overflow: hidden;
 }
 
-body:not(.is-scene-ready) .scene-shell {
-  visibility: hidden;
-}
-
 .viewport-shell {
   width: 100%;
   min-height: 100vh;

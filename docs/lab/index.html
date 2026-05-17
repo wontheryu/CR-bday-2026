@@ -21,8 +21,6 @@
     <div class="scene-shell">
       <div class="app-frame">
         <div class="scene-bg"></div>
-        <div class="frame-layer frame-layer-outer"></div>
-        <div class="frame-layer frame-layer-inner"></div>
 
         <main class="screen">
           <section
@@ -34,6 +32,7 @@
               <div class="boot-stage__header">
                 <img
                   class="home-logo"
+                  data-home-logo
                   src="./assets/img/ui/loading-logo.png"
                   alt="로딩 605 로고"
                   width="142"
@@ -42,40 +41,7 @@
                 />
               </div>
 
-              <div class="boot-stage__party" aria-label="캐릭터 4명">
-                <img
-                  class="party-character"
-                  src="./assets/img/characters/char-1.png"
-                  alt="캐릭터 1"
-                  width="204"
-                  height="204"
-                  decoding="async"
-                />
-                <img
-                  class="party-character"
-                  src="./assets/img/characters/char-2.png"
-                  alt="캐릭터 2"
-                  width="204"
-                  height="204"
-                  decoding="async"
-                />
-                <img
-                  class="party-character"
-                  src="./assets/img/characters/char-3.png"
-                  alt="캐릭터 3"
-                  width="204"
-                  height="204"
-                  decoding="async"
-                />
-                <img
-                  class="party-character"
-                  src="./assets/img/characters/char-4.png"
-                  alt="캐릭터 4"
-                  width="204"
-                  height="204"
-                  decoding="async"
-                />
-              </div>
+              <div class="boot-stage__party" aria-label="캐릭터 4명" data-party-group></div>
 
               <div class="loading-meter">
                 <p class="loading-meter__label">Loading...</p>
@@ -95,6 +61,7 @@
               <div class="home-stage__header">
                 <img
                   class="home-logo"
+                  data-home-logo
                   src="./assets/img/ui/loading-logo.png"
                   alt="로딩 605 로고"
                   width="142"
@@ -103,40 +70,7 @@
                 />
               </div>
 
-              <div class="home-stage__party" aria-label="캐릭터 4명">
-                <img
-                  class="party-character"
-                  src="./assets/img/characters/char-1.png"
-                  alt="캐릭터 1"
-                  width="204"
-                  height="204"
-                  decoding="async"
-                />
-                <img
-                  class="party-character"
-                  src="./assets/img/characters/char-2.png"
-                  alt="캐릭터 2"
-                  width="204"
-                  height="204"
-                  decoding="async"
-                />
-                <img
-                  class="party-character"
-                  src="./assets/img/characters/char-3.png"
-                  alt="캐릭터 3"
-                  width="204"
-                  height="204"
-                  decoding="async"
-                />
-                <img
-                  class="party-character"
-                  src="./assets/img/characters/char-4.png"
-                  alt="캐릭터 4"
-                  width="204"
-                  height="204"
-                  decoding="async"
-                />
-              </div>
+              <div class="home-stage__party" aria-label="캐릭터 4명" data-party-group></div>
 
               <div class="loading-meter loading-meter--ambient">
                 <p class="loading-meter__label">Loading...</p>
@@ -159,7 +93,6 @@
   </div>
 
   <script src="./assets/js/content.js"></script>
-  <script src="./assets/js/scene.js"></script>
   <script src="./assets/js/app.js"></script>
   <script src="./assets/js/loading.js"></script>
 </body>
