@@ -14,18 +14,21 @@ window.LAB_CONTENT = {
         id: "notice",
         label: "NOTICE",
         href: "./pages/notice.html",
+        imageSrc: "./assets/img/ui/buttons/btn_notice.png",
         disabled: false
       },
       {
         id: "lucky-draw",
         label: "LUCKY DRAW",
         href: "./pages/lucky-draw.html",
+        imageSrc: "./assets/img/ui/buttons/btn_luckydraw.png",
         disabled: false
       },
       {
-        id: "wardrobe",
-        label: "WARDROBE",
+        id: "archive",
+        label: "ARCHIVE",
         href: "./pages/wardrobe.html",
+        imageSrc: "./assets/img/ui/buttons/btn_archive.png",
         disabled: false
       }
     ],

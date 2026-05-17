@@ -29,23 +29,25 @@ function renderMenu(content) {
   items.forEach((item, index) => {
     const link = document.createElement("a");
     const isDisabled = Boolean(item?.disabled);
-    const isWideLabel = (item?.label || "").length > 8;
-    const leftDeco = document.createElement("span");
-    const label = document.createElement("span");
-    const rightDeco = document.createElement("span");
+    const image = document.createElement("img");
+    const fallback = document.createElement("span");
 
     link.className = "menu-button";
-    if (isWideLabel) {
-      link.classList.add("menu-button--wide");
-    }
+    link.classList.add("menu-button--image");
+    link.setAttribute("aria-label", item?.label || `MENU ${index + 1}`);
 
-    leftDeco.className = "menu-button__deco menu-button__deco--left";
-    leftDeco.setAttribute("aria-hidden", "true");
-    label.className = "menu-button__label";
-    label.textContent = item?.label || `MENU ${index + 1}`;
-    rightDeco.className = "menu-button__deco menu-button__deco--right";
-    rightDeco.setAttribute("aria-hidden", "true");
-    link.append(leftDeco, label, rightDeco);
+    image.className = "menu-button__image";
+    image.src = item?.imageSrc || "";
+    image.alt = "";
+    image.width = 1280;
+    image.height = 288;
+    image.decoding = "async";
+    image.setAttribute("aria-hidden", "true");
+
+    fallback.className = "menu-button__fallback";
+    fallback.textContent = item?.label || `MENU ${index + 1}`;
+
+    link.append(image, fallback);
 
     if (isDisabled) {
       link.href = "#";

@@ -238,6 +238,38 @@
   white-space: nowrap;
 }
 
+.menu-button--image {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  min-height: 0;
+}
+
+.menu-button--image::before,
+.menu-button--image::after,
+.menu-button--image .menu-button__deco {
+  display: none;
+}
+
+.menu-button__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.menu-button__fallback {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .menu-button::before {
   content: "";
   position: absolute;
@@ -306,11 +338,22 @@
   filter: brightness(1.05);
 }
 
+.menu-button--image:hover,
+.menu-button--image:focus-visible {
+  transform: translate(-2px, -2px);
+  filter: brightness(1.03);
+}
+
 .menu-button:active {
   transform: translate(2px, 2px);
   box-shadow:
     0 0 0 4px var(--line-dark),
     5px 5px 0 rgba(0, 0, 0, 0.72);
+}
+
+.menu-button--image:active {
+  transform: translate(2px, 2px);
+  filter: brightness(0.98);
 }
 
 .menu-button:focus-visible {
