@@ -447,8 +447,8 @@
 }
 
 .support-link__badge {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
   border: 2px solid var(--accent);
@@ -457,6 +457,22 @@
     inset 0 0 0 1px rgba(255, 255, 255, 0.22);
   background: rgba(244, 201, 95, 0.08);
   color: var(--accent);
+}
+
+.support-link__badge--image {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.support-link__badge-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  image-rendering: auto;
 }
 
 .support-link__badge svg {

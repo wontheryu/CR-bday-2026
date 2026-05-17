@@ -74,6 +74,7 @@ function renderOfficialLinks(content) {
   items.forEach((item) => {
     const link = document.createElement("a");
     const badge = document.createElement("span");
+    const badgeImage = document.createElement("img");
     const title = document.createElement("span");
     const detail = document.createElement("span");
 
@@ -83,7 +84,21 @@ function renderOfficialLinks(content) {
     link.rel = "noreferrer noopener";
     badge.className = "support-link__badge";
     badge.classList.add(`support-link__badge--${item?.icon || "default"}`);
-    badge.innerHTML = getSupportIconMarkup(item?.icon);
+
+    if (item?.badgeImageSrc) {
+      badge.classList.add("support-link__badge--image");
+      badgeImage.className = "support-link__badge-image";
+      badgeImage.src = item.badgeImageSrc;
+      badgeImage.alt = "";
+      badgeImage.width = 256;
+      badgeImage.height = 256;
+      badgeImage.decoding = "async";
+      badgeImage.setAttribute("aria-hidden", "true");
+      badge.appendChild(badgeImage);
+    } else {
+      badge.innerHTML = getSupportIconMarkup(item?.icon);
+    }
+
     title.className = "support-link__title";
     title.textContent = item?.label || "LINK";
     detail.className = "support-link__detail";

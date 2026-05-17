@@ -1,7 +1,12 @@
 const BUTTON_ASSET_VERSION = "20260517-1634";
+const OFFICIAL_LINK_ASSET_VERSION = "20260517-1649";
 
 function withAssetVersion(path) {
   return `${path}?v=${BUTTON_ASSET_VERSION}`;
+}
+
+function withOfficialLinkAssetVersion(path) {
+  return `${path}?v=${OFFICIAL_LINK_ASSET_VERSION}`;
 }
 
 window.LAB_CONTENT = {
@@ -44,6 +49,7 @@ window.LAB_CONTENT = {
         label: "ITZY",
         detail: "YOUTUBE",
         icon: "youtube",
+        badgeImageSrc: withOfficialLinkAssetVersion("./assets/img/ui/official-links/button.png"),
         href: "https://www.youtube.com/@ITZY"
       },
       {
@@ -51,6 +57,7 @@ window.LAB_CONTENT = {
         label: "ITZY",
         detail: "INSTAGRAM",
         icon: "instagram",
+        badgeImageSrc: withOfficialLinkAssetVersion("./assets/img/ui/official-links/button.png"),
         href: "https://www.instagram.com/itzy.all.in.us/"
       },
       {
@@ -58,6 +65,7 @@ window.LAB_CONTENT = {
         label: "CHAERYEONG",
         detail: "INSTAGRAM",
         icon: "instagram",
+        badgeImageSrc: withOfficialLinkAssetVersion("./assets/img/ui/official-links/button.png"),
         href: "https://www.instagram.com/chaerrry0/"
       }
     ]
